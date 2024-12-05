@@ -421,10 +421,12 @@ main {
   display: flex;
   width: 60px;
   height: 60px;
-  border: 1px solid var(--orange-yellow-crayola);
   justify-content: center;
+  box-shadow: var(--shadow-2); ;
   align-items: center;
   border-radius: 10px;
+  background: var(--bg-gradient-onyx) ;
+  padding: 10px;
 
 }
 .contact-info {
@@ -518,7 +520,17 @@ main {
   0% { transform: rotate(0); }
   100% { transform: rotate(360deg); }
 }
-
+.service-icon-box1{
+  border-radius: 10px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 10px;
+  
+}
 
 /*-----------------------------------*\
   #ABOUT
