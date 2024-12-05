@@ -308,7 +308,7 @@ main {
 
 
 
-
+ 
 
 /*-----------------------------------*\
   #SIDEBAR
@@ -318,10 +318,10 @@ main {
   margin-bottom: 15px;
   max-height: 132px;
   overflow: hidden;
-  transition: var(--transition-2);
+  transition: var(--transition-2); 
 }
 
-.sidebar.active { max-height: 405px; }
+.sidebar.active { max-height: 505px; }
 
 .sidebar-info {
   position: relative;
