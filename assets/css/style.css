@@ -838,7 +838,7 @@ main {
 }
 
 .skill-progress-fill {
-  background: var(--text-gradient-yellow);
+  background: var(--orange-yellow-crayola);
   height: 100%;
   border-radius: inherit;
 }
@@ -1267,7 +1267,6 @@ textarea.form-input::-webkit-resizer { display: none; }
   .sidebar, article {
     width: 520px;
     margin-inline: auto;
-    padding: 30px;
   }
 
   .article-title {
@@ -1309,7 +1308,7 @@ textarea.form-input::-webkit-resizer { display: none; }
     margin-bottom: 30px;
   }
 
-  .sidebar.active { max-height: 584px; }
+  .sidebar.active { max-height: 684px; }
 
   .sidebar-info { gap: 25px; }
 
