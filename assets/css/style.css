@@ -1,5 +1,50 @@
-
 :root {
+  /* Light mode variables */
+  --bg-gradient-onyx: linear-gradient(to bottom right, hsl(210, 75%, 90%) 3%, hsl(200, 80%, 85%) 97%);
+  --bg-gradient-jet: linear-gradient(to bottom right, hsla(210, 25%, 90%, 0.25) 0%, hsla(210, 15%, 85%, 0) 100%), hsl(210, 90%, 95%);
+  --bg-gradient-accent: linear-gradient(to bottom right, hsl(280, 70%, 60%) 0%, hsla(270, 65%, 58%, 0) 50%);
+  --bg-gradient-accent-2: linear-gradient(135deg, hsla(280, 70%, 60%, 0.251) 0%, hsla(270, 65%, 58%, 0) 59.86%), hsl(210, 90%, 95%);
+  --border-gradient-onyx: linear-gradient(to bottom right, hsl(210, 90%, 88%) 0%, hsla(210, 20%, 88%, 0) 50%);
+  --text-gradient-accent: linear-gradient(to right, hsl(280, 70%, 65%), hsl(270, 65%, 60%));
+  --jet: hsl(0, 0%, 95%);
+  --onyx: hsl(240, 1%, 97%);
+  --eerie-black-1: hsl(240, 2%, 90%);
+  --smoky-black: hsl(0, 0%, 98%);
+  --white-1: hsl(0, 0%, 0%);
+  --white-2: hsl(0, 0%, 5%);
+  /* Font, size, shadow, etc., remain unchanged */
+
+
+
+
+  --shadow-1: -4px 8px 24px hsla(0, 0%, 0%, 0.25);
+  --shadow-2: 0 16px 30px hsla(0, 0%, 0%, 0.25);
+  --shadow-3: 0 16px 40px hsla(0, 0%, 0%, 0.25);
+  --shadow-4: 0 25px 50px hsla(0, 0%, 0%, 0.15);
+  --shadow-5: 0 24px 80px hsla(0, 0%, 0%, 0.25);
+  --transition-1: 0.25s ease;
+  --transition-2: 0.5s ease-in-out;
+
+
+
+
+  --ff-poppins: 'Poppins', sans-serif;
+  --fs-1: 24px;
+  --fs-2: 18px;
+  --fs-3: 17px;
+  --fs-4: 16px;
+  --fs-5: 15px;
+  --fs-6: 14px;
+  --fs-7: 13px;
+  --fs-8: 11px;
+  --fw-300: 300;
+  --fw-400: 400;
+  --fw-500: 500;
+  --fw-600: 600;
+
+}
+
+.dark-theme {
   --bg-gradient-onyx: linear-gradient(to bottom right, hsl(210, 25%, 20%) 3%, hsl(200, 20%, 15%) 97%);
   --bg-gradient-jet: linear-gradient(to bottom right, hsla(210, 25%, 15%, 0.251) 0%, hsla(210, 15%, 10%, 0) 100%), hsl(210, 20%, 12%);
   --bg-gradient-accent: linear-gradient(to bottom right, hsl(280, 70%, 60%) 0%, hsla(270, 65%, 58%, 0) 50%);
@@ -9,7 +54,6 @@
   --jet: hsl(0, 0%, 22%);
   --onyx: hsl(240, 1%, 17%);
   --eerie-black-1: hsl(240, 2%, 13%);
-  --eerie-black-2: hsl(240, 2%, 12%);
   --smoky-black: hsl(0, 0%, 7%);
   --white-1: hsl(0, 0%, 100%);
   --white-2: hsl(0, 0%, 98%);
@@ -41,6 +85,114 @@
 
 }
 
+/* From Uiverse.io by andrew-demchenk0 */ 
+.switch-x {
+  font-size: 17px;
+  position: relative;
+  display: inline-block;
+  width: 64px;
+  height: 34px;
+}
+
+.switch-x input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider-x {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #73C0FC;
+  transition: .4s;
+  border-radius: 30px;
+}
+
+.slider-x:before {
+  position: absolute;
+  content: "";
+  height: 30px;
+  width: 30px;
+  border-radius: 20px;
+  left: 2px;
+  bottom: 2px;
+  z-index: 2;
+  background-color: #e8e8e8;
+  transition: .4s;
+}
+
+.sun svg {
+  position: absolute;
+  top: 6px;
+  left: 36px;
+  z-index: 1;
+  width: 24px;
+  height: 24px;
+}
+
+.moon svg {
+  fill: #c1c1c1;
+  position: relative;
+  top: 5px;
+  left: 5px;
+  z-index: 1;
+  width: 24px;
+  height: 24px;
+}
+
+.sun svg {
+  animation: rotate 15s linear infinite;
+}
+
+@keyframes rotate {
+ 
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.moon svg {
+  animation: tilt 5s linear infinite;
+}
+
+@keyframes tilt {
+ 
+  0% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(-10deg);
+  }
+
+  75% {
+    transform: rotate(10deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.input:checked + .slider-x {
+  background-color: #183153;
+}
+
+.input:focus + .slider-x {
+  box-shadow: 0 0 1px #183153;
+}
+
+.input:checked + .slider-x:before {
+  transform: translateX(30px);
+}
 
 /*-----------------------------------*\
   #RESET
@@ -82,7 +234,9 @@ input, textarea {
 
 html { font-family: var(--ff-poppins); }
 
-body { background: var(--smoky-black); }
+body { background: var(--smoky-black); 
+  
+}
 
 
 
@@ -388,6 +542,74 @@ main {
 
 
 
+.theme-toggle {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.theme-toggle .icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: opacity var(--transition-1), transform var(--transition-1);
+}
+
+.theme-toggle .sun {
+  width: 18px;
+  height: 8px;
+  background: radial-gradient(circle, hsl(45, 100%, 72%) 50%, transparent 52%);
+  border-radius: 50%;
+  opacity: 1;
+}
+
+.theme-toggle .moon {
+  width: 10px;
+  height: 10px;
+  background: hsl(0, 0%, 100%);
+  clip-path: circle(50% at 75% 25%);
+  opacity: 0;
+}
+
+.dark-theme .sun {
+  opacity: 0;
+  transform: scale(0.7);
+}
+
+.dark-theme .moon {
+  opacity: 1;
+}
+.theme-toggle .icon {
+  transform-origin: center;
+}
+.theme-toggle .sun {
+  animation: spin 0.5s linear forwards;
+}
+.theme-toggle .moon {
+  animation: scaleUp 0.5s ease-in-out forwards;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes scaleUp {
+  from {
+    transform: scale(0.8);
+  }
+  to {
+    transform: scale(1);
+  }
+}
 
 /*-----------------------------------*\
   #NAVBAR
@@ -398,7 +620,7 @@ main {
   bottom: 0;
   left: 0;
   width: 100%;
-  background: hsla(240, 1%, 17%, 0.75);
+  background: hsla(240, 100%, 68%, 0.75);
   backdrop-filter: blur(10px);
   border: 1px solid var(--jet);
   border-radius: 12px 12px 0 0;
@@ -845,12 +1067,6 @@ main {
 
 
 
-
-
-/*-----------------------------------*\
-  #PORTFOLIO
-\*-----------------------------------*/
-
 .filter-list { display: none; }
 
 .filter-select-box {
@@ -1006,9 +1222,6 @@ main {
 
 
 
-/*-----------------------------------*\
-  #BLOG
-\*-----------------------------------*/
 
 .blog-posts { margin-bottom: 10px; }
 

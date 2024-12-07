@@ -134,6 +134,21 @@ for (let i = 0; i < formInputs.length; i++) {
   });
 }
 
+const themeToggleCheckbox = document.getElementById('theme-checkbox');
+
+// Load theme from local storage
+const savedTheme = localStorage.getItem('theme') || (window.matchMedia("(prefers-color-scheme: dark)").matches ? 'dark' : 'light');
+if (savedTheme === 'dark') {
+  document.documentElement.classList.add('dark-theme');
+  themeToggleCheckbox.checked = true;
+}
+
+// Toggle theme on checkbox change
+themeToggleCheckbox.addEventListener('change', () => {
+  document.documentElement.classList.toggle('dark-theme');
+  const theme = document.documentElement.classList.contains('dark-theme') ? 'dark' : 'light';
+  localStorage.setItem('theme', theme); // Save preference to local storage
+});
 
 
 // page navigation variables
