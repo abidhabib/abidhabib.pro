@@ -1,60 +1,11 @@
-/*-----------------------------------*\
-  #style.css
-\*-----------------------------------*/
-
-
-/**
- * copyright 2022 @codewithsadee
- */
-
-
-
-
-
-/*-----------------------------------*\
-  #CUSTOM PROPERTY
-\*-----------------------------------*/
 
 :root {
-
-  /**
-   * colors
-   */
-
-  /* gradient */
-  --bg-gradient-onyx: linear-gradient(
-    to bottom right, 
-    hsl(210, 25%, 20%) 3%, 
-    hsl(200, 20%, 15%) 97%
-  );
-  --bg-gradient-jet: linear-gradient(
-    to bottom right, 
-    hsla(210, 25%, 15%, 0.251) 0%, 
-    hsla(210, 15%, 10%, 0) 100%
-  ), hsl(210, 20%, 12%);
-  --bg-gradient-accent: linear-gradient(
-    to bottom right, 
-    hsl(280, 70%, 60%) 0%, 
-    hsla(270, 65%, 58%, 0) 50%
-  );
-  --bg-gradient-accent-2: linear-gradient(
-    135deg, 
-    hsla(280, 70%, 60%, 0.251) 0%, 
-    hsla(270, 65%, 58%, 0) 59.86%
-  ), hsl(210, 20%, 12%);
-  --border-gradient-onyx: linear-gradient(
-    to bottom right, 
-    hsl(210, 20%, 18%) 0%, 
-    hsla(210, 20%, 18%, 0) 50%
-  );
-  --text-gradient-accent: linear-gradient(
-    to right, 
-    hsl(280, 70%, 65%), 
-    hsl(270, 65%, 60%)
-  );
-  
-  /* solid */
-
+  --bg-gradient-onyx: linear-gradient(to bottom right, hsl(210, 25%, 20%) 3%, hsl(200, 20%, 15%) 97%);
+  --bg-gradient-jet: linear-gradient(to bottom right, hsla(210, 25%, 15%, 0.251) 0%, hsla(210, 15%, 10%, 0) 100%), hsl(210, 20%, 12%);
+  --bg-gradient-accent: linear-gradient(to bottom right, hsl(280, 70%, 60%) 0%, hsla(270, 65%, 58%, 0) 50%);
+  --bg-gradient-accent-2: linear-gradient(135deg, hsla(280, 70%, 60%, 0.251) 0%, hsla(270, 65%, 58%, 0) 59.86%), hsl(210, 20%, 12%);
+  --border-gradient-onyx: linear-gradient(to bottom right, hsl(210, 20%, 18%) 0%, hsla(210, 20%, 18%, 0) 50%);
+  --text-gradient-accent: linear-gradient(to right, hsl(280, 70%, 65%), hsl(270, 65%, 60%));
   --jet: hsl(0, 0%, 22%);
   --onyx: hsl(240, 1%, 17%);
   --eerie-black-1: hsl(240, 2%, 13%);
@@ -67,15 +18,7 @@
   --light-gray: hsl(0, 0%, 84%);
   --light-gray-70: hsla(0, 0%, 84%, 0.7);
   --bittersweet-shimmer: hsl(0, 43%, 51%);
-
-  /**
-   * typography
-   */
-
-  /* font-family */
   --ff-poppins: 'Poppins', sans-serif;
-
-  /* font-size */
   --fs-1: 24px;
   --fs-2: 18px;
   --fs-3: 17px;
@@ -84,34 +27,19 @@
   --fs-6: 14px;
   --fs-7: 13px;
   --fs-8: 11px;
-
-  /* font-weight */
   --fw-300: 300;
   --fw-400: 400;
   --fw-500: 500;
   --fw-600: 600;
-
-  /**
-   * shadow
-   */
-  
   --shadow-1: -4px 8px 24px hsla(0, 0%, 0%, 0.25);
   --shadow-2: 0 16px 30px hsla(0, 0%, 0%, 0.25);
   --shadow-3: 0 16px 40px hsla(0, 0%, 0%, 0.25);
   --shadow-4: 0 25px 50px hsla(0, 0%, 0%, 0.15);
   --shadow-5: 0 24px 80px hsla(0, 0%, 0%, 0.25);
-
-  /**
-   * transition
-   */
-
   --transition-1: 0.25s ease;
   --transition-2: 0.5s ease-in-out;
 
 }
-
-
-
 
 
 /*-----------------------------------*\
@@ -503,13 +431,14 @@ main {
 
 }
 .navbar-link.active::after{
-  content: "f";
+  content: "";
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
   height: 2px;
   background-color: var(--orange-yellow-crayola);
+
 }
 
 .service-icon-box{
