@@ -87,11 +87,11 @@
 
 /* From Uiverse.io by andrew-demchenk0 */ 
 .switch-x {
-  font-size: 17px;
+  font-size: 14px;
   position: relative;
   display: inline-block;
-  width: 64px;
-  height: 34px;
+  width: 44px;
+  height: 24px;
 }
 
 .switch-x input {
@@ -115,8 +115,8 @@
 .slider-x:before {
   position: absolute;
   content: "";
-  height: 30px;
-  width: 30px;
+  height: 20px;
+  width: 20px;
   border-radius: 20px;
   left: 2px;
   bottom: 2px;
@@ -128,20 +128,20 @@
 .sun svg {
   position: absolute;
   top: 6px;
-  left: 36px;
+  left: 30px;
   z-index: 1;
-  width: 24px;
-  height: 24px;
+  width: 14px;
+  height: 14px;
 }
 
 .moon svg {
   fill: #c1c1c1;
   position: relative;
-  top: 5px;
-  left: 5px;
+  top: 4px;
+  left: 4px;
   z-index: 1;
-  width: 24px;
-  height: 24px;
+  width: 14px;
+  height: 14px;
 }
 
 .sun svg {
@@ -191,7 +191,7 @@
 }
 
 .input:checked + .slider-x:before {
-  transform: translateX(30px);
+  transform: translateX(20px);
 }
 
 /*-----------------------------------*\
