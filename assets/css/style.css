@@ -22,38 +22,37 @@
    */
 
   /* gradient */
-
   --bg-gradient-onyx: linear-gradient(
     to bottom right, 
-    hsl(240, 1%, 25%) 3%, 
-    hsl(0, 0%, 19%) 97%
+    hsl(210, 25%, 20%) 3%, 
+    hsl(200, 20%, 15%) 97%
   );
   --bg-gradient-jet: linear-gradient(
     to bottom right, 
-    hsla(240, 1%, 18%, 0.251) 0%, 
-    hsla(240, 2%, 11%, 0) 100%
-  ), hsl(240, 2%, 13%);
-  --bg-gradient-yellow-1: linear-gradient(
+    hsla(210, 25%, 15%, 0.251) 0%, 
+    hsla(210, 15%, 10%, 0) 100%
+  ), hsl(210, 20%, 12%);
+  --bg-gradient-accent: linear-gradient(
     to bottom right, 
-    hsl(45, 100%, 71%) 0%, 
-    hsla(36, 100%, 69%, 0) 50%
+    hsl(280, 70%, 60%) 0%, 
+    hsla(270, 65%, 58%, 0) 50%
   );
-  --bg-gradient-yellow-2: linear-gradient(
+  --bg-gradient-accent-2: linear-gradient(
     135deg, 
-    hsla(45, 100%, 71%, 0.251) 0%, 
-    hsla(35, 100%, 68%, 0) 59.86%
-  ), hsl(240, 2%, 13%);
+    hsla(280, 70%, 60%, 0.251) 0%, 
+    hsla(270, 65%, 58%, 0) 59.86%
+  ), hsl(210, 20%, 12%);
   --border-gradient-onyx: linear-gradient(
     to bottom right, 
-    hsl(0, 0%, 25%) 0%, 
-    hsla(0, 0%, 25%, 0) 50%
+    hsl(210, 20%, 18%) 0%, 
+    hsla(210, 20%, 18%, 0) 50%
   );
-  --text-gradient-yellow: linear-gradient(
+  --text-gradient-accent: linear-gradient(
     to right, 
-    hsl(45, 100%, 72%), 
-    hsl(35, 100%, 68%)
+    hsl(280, 70%, 65%), 
+    hsl(270, 65%, 60%)
   );
-
+  
   /* solid */
 
   --jet: hsl(0, 0%, 22%);
@@ -350,7 +349,7 @@ main {
   top: -15px;
   right: -15px;
   border-radius: 0 15px;
-  font-size: 13px;
+  font-size: 23px;
   color: var(--orange-yellow-crayola);
   background: var(--bg-gradient-yellow-1); 
 
@@ -492,12 +491,26 @@ main {
   font-size: var(--fs-8);
   padding: 20px 7px;
   transition: color var(--transition-1);
+  font-size: 15px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .navbar-link:hover,
 .navbar-link:focus { color: var(--light-gray-70); }
 
-.navbar-link.active { color: var(--orange-yellow-crayola); }
+.navbar-link.active { color: var(--orange-yellow-crayola); 
+
+
+}
+.navbar-link.active::after{
+  content: "f";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--orange-yellow-crayola);
+}
 
 .service-icon-box{
   border-radius: 10px;
