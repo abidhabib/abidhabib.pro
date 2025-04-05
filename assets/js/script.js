@@ -6,7 +6,7 @@
 const elementToggleFunc = function (elem) { elem.classList.toggle("active"); }
 
 function redirectToChat() {
-  window.location.href = "//chat.abidhabib.pro";
+  window.location.href = "http://chat.abidhabib.pro";
 }
 
 
