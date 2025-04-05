@@ -5,6 +5,9 @@
 // element toggle function
 const elementToggleFunc = function (elem) { elem.classList.toggle("active"); }
 
+function redirectToChat() {
+  window.location.href = "//chat.abidhabib.pro";
+}
 
 
 // sidebar variables
