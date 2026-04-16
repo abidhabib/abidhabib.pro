@@ -1,0 +1,447 @@
+<!doctype html>
+<html lang="en" class="dark-theme">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Abid Habib - Full Stack Developer</title>
+    <link rel="shortcut icon" href="./assets/images/sp logo.png" type="image/x-icon" />
+    <meta name="p:domain_verify" content="0724a4776b079ca3cb9179710be96999"/>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Particle Canvas Background -->
+    <canvas id="particles-canvas"></canvas>
+
+    <main>
+      <!-- SIDEBAR -->
+      <aside class="sidebar sidebar active" data-sidebar>
+        <div class="sidebar-info">
+          <figure class="avatar-box">
+            <img src="./assets/images/dp.jpg" alt="Abid Habib" width="100" style="border-radius: 50%" />
+          </figure>
+          <div class="info-content">
+            <h1 class="name" title="Abid Habib">Abid Habib <ion-icon name="checkmark-circle-outline" class="check-mark"></ion-icon></h1>
+            <p class="title typing-text" id="typing-title"></p>
+          </div>
+          <button class="info_more-btn" data-sidebar-btn>⤭</button>
+        </div>
+
+        <div class="sidebar-info_more">
+          <div class="separator"></div>
+          <ul class="contacts-list">
+            <li class="contact-item">
+              <div class="icon-box"><ion-icon name="mail-outline"></ion-icon></div>
+              <div class="contact-info">
+                <p class="contact-title">Email</p>
+                <a href="mailto:abid.habib@outlook.com" class="contact-link">abid.habib@outlook.com</a>
+              </div>
+            </li>
+            <li class="contact-item">
+              <div class="icon-box"><ion-icon name="phone-portrait-outline"></ion-icon></div>
+              <div class="contact-info">
+                <p class="contact-title">Phone</p>
+                <a href="tel:+923444292065" class="contact-link">+92 344 4292 065</a>
+              </div>
+            </li>
+            <li class="contact-item">
+              <div class="icon-box"><ion-icon name="location-outline"></ion-icon></div>
+              <div class="contact-info">
+                <p class="contact-title">Location</p>
+                <address>Islamabad, Pakistan</address>
+              </div>
+            </li>
+          </ul>
+          <div class="separator"></div>
+          <ul class="social-list">
+            <li class="social-item">
+              <a href="https://www.linkedin.com/in/abid-h-b8056a242" class="social-link" title="LinkedIn">
+                <ion-icon name="logo-linkedin"></ion-icon>
+              </a>
+            </li>
+            <li class="social-item">
+              <a href="https://instagram.com/abid._.habib" class="social-link" title="Instagram">
+                <ion-icon name="logo-instagram"></ion-icon>
+              </a>
+            </li>
+            <li class="social-item">
+              <a href="https://wa.me/+923444292065" class="social-link" title="WhatsApp">
+                <ion-icon name="logo-whatsapp"></ion-icon>
+              </a>
+            </li>
+            <li class="social-item">
+              <a href="https://www.fiverr.com/hammad43" class="social-link" title="Fiverr">
+<ion-icon name="calendar-outline"></ion-icon>              </a>
+            </li>
+          </ul>
+        </div>
+      </aside>
+
+      <!-- MAIN CONTENT -->
+      <div class="main-content">
+        <!-- NAVBAR -->
+        <nav class="navbar">
+          <ul class="navbar-list">
+            <li class="navbar-item">
+              <button class="navbar-link active" data-nav-link>About</button>
+            </li>
+            <li class="navbar-item">
+              <button class="navbar-link" data-nav-link>Resume</button>
+            </li>
+            <li class="navbar-item">
+              <button class="navbar-link" data-nav-link>Portfolio</button>
+            </li>
+            <li class="navbar-item">
+              <button class="navbar-link" data-nav-link>Contact</button>
+            </li>
+          </ul>
+        </nav>
+
+        <!-- ABOUT -->
+    <article class="about active" data-page="about">
+  <header>
+    <h2 class="h2 article-title reveal">About me</h2>
+  </header>
+
+  <section class="about-text reveal">
+    <p>
+      I'm <strong>Abid Habib</strong>, a full stack developer based in <strong>Pakistan</strong>. I build real systems, not just UI.
+    </p>
+    <p>
+      My stack is <strong>React, Node.js, and MySQL</strong>. I focus on backend logic, APIs, and scalable structure. I care about performance, clean data flow, and systems that don’t break under real usage.
+    </p>
+  </section>
+
+<!-- SERVICES -->
+<section class="service">
+  <h3 class="h3 service-title reveal">What I do</h3>
+  <ul class="service-list">
+
+    <!-- Backend -->
+    <li class="service-item reveal">
+      <div class="align-service">
+        <div class="service-icon-box1">
+          <img src="https://kimi-web-img.moonshot.cn/img/cdn-icons-png.freepik.com/379daec69d0f7f7161bca8d958997788d8cbeac2.png" alt="backend api" width="60" />
+        </div>
+        <h4 class="h4 service-item-title">Backend & APIs</h4>
+      </div>
+      <p class="service-item-text">
+        I design and build APIs, handle authentication, and manage databases. Focus on clean architecture, security, and performance.
+      </p>
+    </li>
+
+    <!-- React Frontend -->
+    <li class="service-item reveal">
+      <div class="align-service">
+        <div class="service-icon-box1">
+          <img src="https://kimi-web-img.moonshot.cn/img/cdn3d.iconscout.com/2fef3e7dac50d38f527d2ec83e462484753580d7.png" alt="react frontend" width="60" />
+        </div>
+        <h4 class="h4 service-item-title">Frontend (React)</h4>
+      </div>
+      <p class="service-item-text">
+        I build responsive interfaces using React. Clean UI, fast performance, and proper state management. No unnecessary complexity.
+      </p>
+    </li>
+
+    <!-- Database -->
+    <li class="service-item reveal">
+      <div class="align-service">
+        <div class="service-icon-box1">
+          <img src="https://kimi-web-img.moonshot.cn/img/cdn3d.iconscout.com/33b800946099afe495b6b099e58981d74c502dda.png" alt="database mysql" width="60" />
+        </div>
+        <h4 class="h4 service-item-title">Database Design</h4>
+      </div>
+      <p class="service-item-text">
+        I structure and optimize databases using MySQL. Focus on efficient queries, relationships, and data integrity.
+      </p>
+    </li>
+
+    <!-- System Building -->
+    <li class="service-item reveal">
+      <div class="align-service">
+        <div class="service-icon-box1">
+          <img src="https://kimi-web-img.moonshot.cn/img/static.vecteezy.com/da06b6c7a957e59b7eaf5667df0029a88e5bc396.jpg" alt="system architecture" width="60" />
+        </div>
+        <h4 class="h4 service-item-title">System Building</h4>
+      </div>
+      <p class="service-item-text">
+        I build complete systems including admin panels, role-based access, and real-world workflows. Designed for actual usage, not demos.
+      </p>
+    </li>
+
+    <!-- Security -->
+    <li class="service-item reveal">
+      <div class="align-service">
+        <div class="service-icon-box1">
+          <img src="https://kimi-web-img.moonshot.cn/img/img.freepik.com/f655837b9dc46a4a27b318d286eebae2524a8ff0.jpg" alt="security" width="60" />
+        </div>
+        <h4 class="h4 service-item-title">Authentication & Security</h4>
+      </div>
+      <p class="service-item-text">
+        JWT auth, password hashing, session handling, and basic security practices to protect applications from common attacks.
+      </p>
+    </li>
+
+  </ul>
+</section>
+</article>
+
+<!-- RESUME -->
+<article class="resume" data-page="resume">
+  <header>
+    <h2 class="h2 article-title reveal">Resume</h2>
+  </header>
+
+  <!-- EDUCATION -->
+  <section class="timeline reveal">
+    <div class="title-wrapper">
+      <div class="icon-box"><ion-icon name="book-outline"></ion-icon></div>
+      <h3 class="h3">Education</h3>
+    </div>
+
+    <ol class="timeline-list">
+
+      <li class="timeline-item">
+        <h4 class="h4 timeline-item-title">BS Information Technology</h4>
+        <span>2018 — 2022 | University of Sargodha</span>
+        <p class="timeline-text">
+          Studied core computer science with focus on backend development, database systems, and problem solving.
+        </p>
+      </li>
+
+      <li class="timeline-item">
+        <h4 class="h4 timeline-item-title">Intermediate in Computer Science (ICS)</h4>
+        <span>2015 — 2017 | Govt High School</span>
+        <p class="timeline-text">
+          Built strong fundamentals in programming, logic building, and basic software development concepts.
+        </p>
+      </li>
+
+      <li class="timeline-item">
+        <h4 class="h4 timeline-item-title">Web Development Course</h4>
+        <span>2020 — 2021</span>
+        <p class="timeline-text">
+          Learned HTML, CSS, JavaScript, React, and API integration. Focused on building responsive and dynamic applications.
+        </p>
+      </li>
+
+    </ol>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section class="timeline reveal">
+    <div class="title-wrapper">
+      <div class="icon-box"><ion-icon name="briefcase-outline"></ion-icon></div>
+      <h3 class="h3">Experience</h3>
+    </div>
+
+    <ol class="timeline-list">
+
+      <li class="timeline-item">
+        <h4 class="h4 timeline-item-title">Full Stack Developer</h4>
+        <span>2022 — Present</span>
+        <p class="timeline-text">
+          Building full web applications using React, Node.js, Express, and MySQL. Developed admin panels, attendance systems, and ROI platforms with real-time features, role-based access, and secure authentication.
+        </p>
+      </li>
+
+      <li class="timeline-item">
+        <h4 class="h4 timeline-item-title">React JS Developer (SIL Lahore)</h4>
+        <span>2022 — 2023</span>
+        <p class="timeline-text">
+          Built scalable frontend applications using React, Redux, Tailwind CSS, and Material UI. Focused on performance, clean architecture, and API integration.
+        </p>
+      </li>
+
+    </ol>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="skill reveal">
+    <h3 class="h3 skills-title">My skills</h3>
+
+    <ul class="skills-list content-card">
+
+      <li class="skills-item">
+        <div class="title-wrapper">
+          <h5 class="h5">React.js</h5>
+          <data value="85">85%</data>
+        </div>
+        <div class="skill-progress-bg">
+          <div class="skill-progress-fill" style="--target-width: 85%"></div>
+        </div>
+      </li>
+
+      <li class="skills-item">
+        <div class="title-wrapper">
+          <h5 class="h5">Node.js & Express</h5>
+          <data value="75">75%</data>
+        </div>
+        <div class="skill-progress-bg">
+          <div class="skill-progress-fill" style="--target-width: 75%"></div>
+        </div>
+      </li>
+
+      <li class="skills-item">
+        <div class="title-wrapper">
+          <h5 class="h5">MySQL & Database Design</h5>
+          <data value="80">80%</data>
+        </div>
+        <div class="skill-progress-bg">
+          <div class="skill-progress-fill" style="--target-width: 80%"></div>
+        </div>
+      </li>
+
+      <li class="skills-item">
+        <div class="title-wrapper">
+          <h5 class="h5">Git & Deployment</h5>
+          <data value="70">70%</data>
+        </div>
+        <div class="skill-progress-bg">
+          <div class="skill-progress-fill" style="--target-width: 70%"></div>
+        </div>
+      </li>
+
+    </ul>
+  </section>
+</article>
+        <!-- PORTFOLIO -->
+  <article class="portfolio" data-page="portfolio">
+  <header>
+    <h2 class="h2 article-title reveal">Portfolio</h2>
+  </header>
+
+  <section class="projects">
+
+    <ul class="filter-list">
+      <li class="filter-item"><button class="active" data-filter-btn>All</button></li>
+      <li class="filter-item"><button data-filter-btn>Full Stack</button></li>
+      <li class="filter-item"><button data-filter-btn>Frontend</button></li>
+      <li class="filter-item"><button data-filter-btn>Backend</button></li>
+    </ul>
+
+    <div class="filter-select-box">
+      <button class="filter-select" data-select>
+        <div class="select-value" data-selecct-value>Select category</div>
+        <div class="select-icon"><ion-icon name="chevron-down"></ion-icon></div>
+      </button>
+
+      <ul class="select-list">
+        <li class="select-item"><button data-select-item>All</button></li>
+        <li class="select-item"><button data-select-item>Full Stack</button></li>
+        <li class="select-item"><button data-select-item>Frontend</button></li>
+        <li class="select-item"><button data-select-item>Backend</button></li>
+      </ul>
+    </div>
+
+    <ul class="project-list">
+
+      <!-- Admin Panel -->
+      <li class="project-item active" data-filter-item data-category="full stack">
+        <a href="#">
+          <figure class="project-img">
+            <div class="project-item-icon-box"><ion-icon name="eye-outline"></ion-icon></div>
+            <img src="https://kimi-web-img.moonshot.cn/img/s3-alpha.figma.com/0547b862bc184ae54b5123d671b86ea0334fbb64.png" alt="Admin Dashboard" loading="lazy" />
+          </figure>
+          <h3 class="project-title">Admin Dashboard System</h3>
+          <p class="project-category">Full Stack (React, Node, MySQL)</p>
+        </a>
+      </li>
+
+      <!-- Attendance App -->
+      <li class="project-item active" data-filter-item data-category="full stack">
+        <a href="#">
+          <figure class="project-img">
+            <div class="project-item-icon-box"><ion-icon name="eye-outline"></ion-icon></div>
+            <img src="https://kimi-web-img.moonshot.cn/img/cdn.freebiesupply.com/6d08d524a6ac70db9d677f5fe5e85e20e840eff1.png" alt="Attendance Dashboard" loading="lazy" />
+          </figure>
+          <h3 class="project-title">Attendance Management System</h3>
+          <p class="project-category">Full Stack (QR + Role Based)</p>
+        </a>
+      </li>
+
+      <!-- ROI App -->
+      <li class="project-item active" data-filter-item data-category="full stack">
+        <a href="#">
+          <figure class="project-img">
+            <div class="project-item-icon-box"><ion-icon name="eye-outline"></ion-icon></div>
+            <img src="https://kimi-web-img.moonshot.cn/img/s3-alpha.figma.com/2127853632acac2c8b94e3528a39d742b845e620.png" alt="ROI Analytics Dashboard" loading="lazy" />
+          </figure>
+          <h3 class="project-title">ROI Web Application</h3>
+          <p class="project-category">Finance + Analytics</p>
+        </a>
+      </li>
+
+      <!-- API Backend -->
+      <li class="project-item active" data-filter-item data-category="backend">
+        <a href="#">
+          <figure class="project-img">
+            <div class="project-item-icon-box"><ion-icon name="eye-outline"></ion-icon></div>
+            <img src="https://kimi-web-img.moonshot.cn/img/www.peerbits.com/0fdace2bccc0c0652833873b94ebcef75b7b3009.jpg" alt="REST API Code" loading="lazy" />
+          </figure>
+          <h3 class="project-title">REST API System</h3>
+          <p class="project-category">Node.js + Express + JWT</p>
+        </a>
+      </li>
+
+      <!-- React UI -->
+      <li class="project-item active" data-filter-item data-category="frontend">
+        <a href="#">
+          <figure class="project-img">
+            <div class="project-item-icon-box"><ion-icon name="eye-outline"></ion-icon></div>
+            <img src="https://kimi-web-img.moonshot.cn/img/files.ably.io/724f8649c36ee201ed7e70ee72f3f59139dfd050.png" alt="React Component Library" loading="lazy" />
+          </figure>
+          <h3 class="project-title">React UI System</h3>
+          <p class="project-category">React + Tailwind + Redux</p>
+        </a>
+      </li>
+
+      <!-- Crypto Project -->
+      <li class="project-item active" data-filter-item data-category="full stack">
+        <a href="#">
+          <figure class="project-img">
+            <div class="project-item-icon-box"><ion-icon name="eye-outline"></ion-icon></div>
+            <img src="https://kimi-web-img.moonshot.cn/img/cdn.dribbble.com/7cb5409798004deb483a3abbacaf61c702c45f6c.png" alt="Crypto Exchange Dashboard" loading="lazy" />
+          </figure>
+          <h3 class="project-title">Crypto Exchange MVP</h3>
+          <p class="project-category">Full Stack + Payments</p>
+        </a>
+      </li>
+
+    </ul>
+  </section>
+</article>
+        <!-- CONTACT -->
+        <article class="contact" data-page="contact">
+          <header>
+            <h2 class="h2 article-title reveal">Contact</h2>
+          </header>
+          <section class="contact-info-buttons reveal">
+            <h3 class="h3 form-title" style="text-align: center">Let's Work Together</h3>
+            <p class="timeline-text" style="margin-bottom: 25px; text-align: center">
+              I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions. Feel free to reach out!
+            </p>
+            <div class="contact-buttons-wrapper">
+              <a href="https://wa.me/923444292065" target="_blank" class="form-btn contact-btn">
+                <ion-icon name="logo-whatsapp"></ion-icon>
+                <span>Ping on WhatsApp</span>
+              </a>
+              <a href="mailto:abid.habib@outlook.com" class="form-btn contact-btn">
+                <ion-icon name="mail-outline"></ion-icon>
+                <span>Send an Email</span>
+              </a>
+            </div>
+          </section>
+        </article>
+      </div>
+    </main>
+
+    <script src="./script.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  </body>
+</html>
