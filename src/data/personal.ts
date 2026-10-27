@@ -1,7 +1,7 @@
 export const personal = {
   name: "Abid Habib",
   initials: "AH",
-  title: "Full-Stack Software Engineer",
+  title: "Full-Stack Software Developer",
   location: "Islamabad, Pakistan",
   email: "abid.habib@outlook.com",
   phone: "+92 344 4292 065",
@@ -9,12 +9,12 @@ export const personal = {
   website: "https://abidhabib.pro",
   portrait: "/dp.webp",
   portraitPng: "/dp.png",
-  tagline: "Full-Stack Software Engineer focused on thoughtful digital systems.",
+  tagline: "Full-Stack Software Developer focused on thoughtful digital systems.",
   hero: {
-    eyebrow: "Full-Stack Software Engineer",
+    eyebrow: "Full-Stack Software Developer",
     heading: ["Full-Stack Development", "digital", "experiences", "with purpose"],
     description:
-      "I'm Abid Habib, a Full-Stack Software Engineer building scalable web applications, reliable backend systems, and thoughtful digital experiences using modern JavaScript technologies.",
+      "I'm Abid Habib, a Full-Stack Software Developer building scalable web applications, reliable backend systems, and thoughtful digital experiences using modern JavaScript technologies.",
     specialization: "React · Node.js · MySQL · Linux Infrastructure",
     location: "Based in Islamabad, Pakistan",
   },

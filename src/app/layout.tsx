@@ -23,9 +23,9 @@ const plexMono = IBM_Plex_Mono({
 });
 
 const SITE_URL = "https://abidhabib.pro";
-const TITLE = "Abid Habib | Full-Stack Software Engineer";
+const TITLE = "Abid Habib | Full-Stack Developer";
 const DESCRIPTION =
-  "Portfolio of Abid Habib, a Full-Stack Software Engineer specializing in React.js, Node.js, MySQL, REST APIs, and Linux infrastructure.";
+  "Portfolio of Abid Habib, a Full-Stack Developer specializing in React.js, Node.js, MySQL, REST APIs, and Linux infrastructure.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   description: DESCRIPTION,
   keywords: [
     "Abid Habib",
-    "Full-Stack Software Engineer",
+    "Full-Stack Developer",
     "React.js Developer",
     "Node.js Developer",
     "MySQL",
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
         url: "/dp.png",
         width: 698,
         height: 698,
-        alt: "Abid Habib — Full-Stack Software Engineer",
+        alt: "Abid Habib — Full-Stack Software Developer",
       },
     ],
   },
@@ -80,7 +80,7 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: "Abid Habib",
-  jobTitle: "Full-Stack Software Engineer",
+  jobTitle: "Full-Stack Developer",
   url: SITE_URL,
   image: `${SITE_URL}/dp.png`,
   email: "mailto:abid.habib@outlook.com",

@@ -1,6 +1,6 @@
-# Abid Habib — Developer Portfolio
+# Abid Habib — Portfolio
 
-A premium, editorial portfolio for Abid Habib, Full-Stack Software Engineer.
+A editorial portfolio for <Abid Habib/>, Full-Stack Developer .
 Built with a quiet-confidence design system: warm paper neutrals, a restrained
 copper accent, disciplined typography, and subtle motion.
 

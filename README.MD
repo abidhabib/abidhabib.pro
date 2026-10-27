@@ -132,7 +132,7 @@ Released under the [MIT License](./LICENSE) — free to use, fork, and make your
 
 <div align="center">
 
-Built by **[Abid Habib](https://abidhabib.pro)** · Full-Stack Software Engineer
+Built by **[Abid Habib](https://abidhabib.pro)** · Full-Stack Developer
 
 [GitHub](https://github.com/abidhabib) · [LinkedIn](https://www.linkedin.com/in/abid-h-b8056a242) · [WhatsApp](https://wa.me/923444292065) · [Fiverr](https://www.fiverr.com/hammad43)
 
