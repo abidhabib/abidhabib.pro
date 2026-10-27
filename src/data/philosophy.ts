@@ -29,7 +29,7 @@ export const aboutSection = {
   eyebrow: "01 / About",
   heading: "Technology is the tool. Solving problems is the work.",
   paragraphs: [
-    "I'm a Full-Stack Software Developer with experience developing modern web applications, backend APIs, and database-driven business systems.",
+    "I'm a Full-Stack Developer with experience developing modern web applications, backend APIs, and database-driven business systems.",
     "My work focuses on connecting clean frontend experiences with reliable backend architecture, efficient databases, and production-ready infrastructure.",
     "From responsive interfaces and administrative dashboards to financial workflows, authentication systems, and containerized deployments, I work across the application lifecycle.",
     "I enjoy understanding how systems operate beyond the interface, from SQL queries and server processes to Nginx configuration, Docker containers, and Linux-based infrastructure.",

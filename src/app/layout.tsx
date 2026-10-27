@@ -58,7 +58,7 @@ export const metadata: Metadata = {
         url: "/dp.png",
         width: 698,
         height: 698,
-        alt: "Abid Habib — Full-Stack Software Developer",
+        alt: "Abid Habib — Full-Stack Developer",
       },
     ],
   },

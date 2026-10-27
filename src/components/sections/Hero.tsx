@@ -211,7 +211,7 @@ export function Hero() {
                 <div className="relative aspect-square">
                   <Image
                     src={personal.portrait}
-                    alt="Portrait of Abid Habib, Full-Stack Software Developer"
+                    alt="Portrait of Abid Habib, Full-Stack Developer"
                     fill
                     priority
                     sizes="(max-width: 1024px) 90vw, 480px"
