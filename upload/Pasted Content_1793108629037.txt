@@ -552,7 +552,7 @@ Use functional, neutral project titles.
 
 Do not use previous brand names, commercial site names, referral-platform names, or historical business domains.
 
-### Project 01: Membership & Earnings Management Platform
+### Project 01: Membership & LMS Management Platform
 
 Category:
 Full-Stack Web Application
@@ -562,21 +562,21 @@ React.js, Node.js, Express.js, MySQL, Tailwind CSS
 
 Description:
 
-"An end-to-end membership and transaction management system supporting user registration, subscription plans, hierarchical team structures, automated activity-based calculations, digital wallets, administrative workflows, and reporting."
+"An end-to-end membership and transaction management system supporting user registration, subscription plans, hierarchical team structures, automated activity-based calculations, digital credits, administrative workflows, and reporting."
 
 Core features:
 - User registration and authentication
 - Membership plans
 - Referral hierarchy management
 - Automated calculation workflows
-- Wallet management
-- Withdrawal processing
+- Credits management
+- Outflow processing
 - Admin approval system
 - Notifications
 - Financial reporting
 - SQL-backed data processing
 
-### Project 02: Financial Wallet & Transaction Engine
+### Project 02: Financial Credits & Transaction Engine
 
 Category:
 Backend Engineering
@@ -586,12 +586,12 @@ Node.js, Express.js, MySQL
 
 Description:
 
-"A backend transaction system designed to manage digital balances, internal credits, withdrawal requests, fee calculations, and administrative financial operations."
+"A backend transaction system designed to manage digital balances, internal credits, outflow requests, fee calculations, and administrative financial operations."
 
 Core features:
 - Ledger-style transaction records
 - Balance processing
-- Withdrawal request lifecycle
+- Outflow request lifecycle
 - Fee calculations
 - Approval and rejection handling
 - Transaction history

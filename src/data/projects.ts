@@ -21,18 +21,18 @@ export const featuredProjects: Project[] = [
   {
     id: "membership-platform",
     number: "01",
-    title: "Membership & Earnings Management Platform",
+    title: "Membership & LMS Management Platform",
     category: "Full-Stack Web Application",
     tech: ["React.js", "Node.js", "Express.js", "MySQL", "Tailwind CSS"],
     description:
-      "An end-to-end membership and transaction management system supporting user registration, subscription plans, hierarchical team structures, automated activity-based calculations, digital wallets, administrative workflows, and reporting.",
+      "An end-to-end membership and transaction management system supporting user registration, subscription plans, hierarchical team structures, automated activity-based calculations, digital credits, administrative workflows, and reporting.",
     features: [
       "User registration and authentication",
       "Membership plans",
       "Referral hierarchy management",
       "Automated calculation workflows",
-      "Wallet management",
-      "Withdrawal processing",
+      "Credits management",
+      "OutFlow processing",
       "Admin approval system",
       "Notifications",
       "Financial reporting",
@@ -41,22 +41,22 @@ export const featuredProjects: Project[] = [
     mockup: "dashboard",
     caseStudy: {
       overview:
-        "A complete membership platform that connects public-facing registration, subscription handling, and a hierarchical team structure with an administrative control center for approvals, wallets, and reporting. The application covers the full lifecycle of a member: signup, plan selection, team growth, activity-based earnings, and withdrawals.",
+        "A complete membership platform that connects public-facing registration, subscription handling, and a hierarchical team structure with an administrative control center for approvals, credits, and reporting. The application covers the full lifecycle of a member: signup, plan selection, team growth, activity-based calculations, and outflow.",
       problem:
-        "Membership-driven businesses need a single reliable system where member activity translates into accurate balances without manual bookkeeping. Managing hierarchical teams, automated calculations, and withdrawal approvals by hand invites errors, disputes, and administrative overhead that grows with every new member.",
+        "Membership-driven businesses need a single reliable system where member activity translates into accurate balances without manual bookkeeping. Managing hierarchical teams, automated calculations, and Outflow approvals by hand invites errors, disputes, and administrative overhead that grows with every new member.",
       approach:
-        "The system was modeled around a relational core: members, plans, teams, activities, wallets, and transactions as clearly separated tables with enforced foreign keys. Automated calculation workflows process activity records into wallet movements, while every withdrawal passes through an explicit admin approval state before funds are released.",
+        "The system was modeled around a relational core: members, plans, teams, activities, credits, and transactions as clearly separated tables with enforced foreign keys. Automated calculation workflows process activity records into credits movements, while every OutFlow passes through an explicit admin approval state before funds are released.",
       architecture: [
         "React.js frontend with protected routes and role-aware views",
         "Express.js REST API with JWT authentication and authorization middleware",
-        "MySQL schema covering members, plans, hierarchies, wallets, and transactions",
-        "Automated calculation workflows for activity-based earnings",
-        "Administrative approval queue for withdrawals and account actions",
+        "MySQL schema covering members, plans, hierarchies, credits, and transactions",
+        "Automated calculation workflows for activity-based calculations",
+        "Administrative approval queue for OutFlow and account actions",
       ],
       capabilities: [
         "Registration, authentication, and membership plan management",
         "Referral hierarchy tracking across team structures",
-        "Wallet credits, withdrawal requests, and processing states",
+        "Credit management, OutFlow requests, and processing states",
         "Admin approvals, notifications, and financial reporting",
       ],
       considerations: [
@@ -67,17 +67,17 @@ export const featuredProjects: Project[] = [
     },
   },
   {
-    id: "wallet-engine",
+    id: "credits-engine",
     number: "02",
-    title: "Financial Wallet & Transaction Engine",
+    title: "Financial Credits & Transaction Engine",
     category: "Backend Engineering",
     tech: ["Node.js", "Express.js", "MySQL"],
     description:
-      "A backend transaction system designed to manage digital balances, internal credits, withdrawal requests, fee calculations, and administrative financial operations.",
+      "A backend transaction system designed to manage digital balances, internal credits, OutFlow requests, fee calculations, and administrative financial operations.",
     features: [
       "Ledger-style transaction records",
       "Balance processing",
-      "Withdrawal request lifecycle",
+      "OutFlow request lifecycle",
       "Fee calculations",
       "Approval and rejection handling",
       "Transaction history",
@@ -88,24 +88,24 @@ export const featuredProjects: Project[] = [
       overview:
         "A dedicated backend engine for financial operations, structured as a ledger rather than a simple balance field. Every credit, debit, fee, and adjustment is an immutable transaction record, and balances are the sum of their history — making reconciliation a query rather than an investigation.",
       problem:
-        "Wallet features fail quietly when balance is stored as a single mutable number. Without a ledger, there is no way to answer where a balance came from, reverse a mistaken operation, or audit a fee — and every bug becomes a data-integrity incident.",
+        "Credits features fail quietly when balance is stored as a single mutable number. Without a ledger, there is no way to answer where a balance came from, reverse a mistaken operation, or audit a fee — and every bug becomes a data-integrity incident.",
       approach:
-        "Transactions are written as append-only ledger entries with typed operations and references to the requests that caused them. Withdrawals move through an explicit lifecycle — requested, calculated with fees, approved or rejected, and settled — with each transition recorded. Reporting and reconciliation logic runs over the ledger instead of trusting in-place balances.",
+        "Transactions are written as append-only ledger entries with typed operations and references to the requests that caused them. OutFlow move through an explicit lifecycle — requested, calculated with fees, approved or rejected, and settled — with each transition recorded. Reporting and reconciliation logic runs over the ledger instead of trusting in-place balances.",
       architecture: [
         "Node.js and Express.js service layer dedicated to financial operations",
         "MySQL ledger schema with typed, append-only transaction records",
-        "State-machine style withdrawal lifecycle with fee calculation steps",
+        "State-machine style OutFlow lifecycle with fee calculation steps",
         "Reconciliation queries that derive balances from transaction history",
       ],
       capabilities: [
         "Balance processing backed by ledger-style records",
-        "Withdrawal request lifecycle with approval and rejection handling",
+        "OutFlow request lifecycle with approval and rejection handling",
         "Fee calculations applied as first-class transaction entries",
         "Transaction history and financial reporting for administration",
       ],
       considerations: [
         "Every mutation of value is expressed as a transaction record, never a silent balance edit",
-        "Approval and rejection paths are explicit states, so no withdrawal exists in an ambiguous middle ground",
+        "Approval and rejection paths are explicit states, so no OutFlow exists in an ambiguous middle ground",
         "The engine deliberately avoids claims of formal banking compliance or independent audit status — it is engineering discipline, not a regulated financial product",
       ],
     },
@@ -297,7 +297,7 @@ export const archiveProjects: Project[] = [
     id: "remote-desktop",
     number: "06",
     title: "Browser-Based Remote Linux Desktop",
-    category: "Infrastructure Engineering",
+    category: "Infrastructure & DevOps",
     tech: ["Ubuntu", "Docker", "XFCE", "Nginx", "SSL/TLS"],
     description:
       "A self-hosted remote desktop environment accessible through a web browser, configured with container isolation, custom domain routing, secure HTTPS, and resource optimization.",

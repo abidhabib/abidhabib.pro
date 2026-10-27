@@ -170,7 +170,7 @@ export function CaseStudyModal({ project, onClose }: ModalProps) {
                   </div>
                 </Block>
 
-                <Block title="Engineering Considerations">
+                <Block title="Dev Considerations">
                   <ul className="space-y-3.5">
                     {project.caseStudy.considerations.map((c, i) => (
                       <li key={i} className="border-l-2 border-accent/50 pl-4">

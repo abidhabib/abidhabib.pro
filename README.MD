@@ -108,6 +108,8 @@ src/
 
 ## ☁️ Deployment
 
+**GitHub Pages** — pushes to `main` run `.github/workflows/deploy-pages.yml`, build a static export, and deploy it to [abidhabib.pro](https://abidhabib.pro). The repository's Pages source must be **GitHub Actions**. Run `bun run build:pages` locally to generate the static site in `out/`.
+
 **Vercel (recommended)** — import the repo, framework auto-detected, zero config.
 
 **Any Node host / VPS** —

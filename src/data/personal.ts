@@ -12,7 +12,7 @@ export const personal = {
   tagline: "Full-Stack Software Engineer focused on thoughtful digital systems.",
   hero: {
     eyebrow: "Full-Stack Software Engineer",
-    heading: ["Engineering", "digital", "experiences", "with purpose"],
+    heading: ["Full-Stack Development", "digital", "experiences", "with purpose"],
     description:
       "I'm Abid Habib, a Full-Stack Software Engineer building scalable web applications, reliable backend systems, and thoughtful digital experiences using modern JavaScript technologies.",
     specialization: "React · Node.js · MySQL · Linux Infrastructure",

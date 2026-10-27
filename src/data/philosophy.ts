@@ -37,7 +37,7 @@ export const aboutSection = {
   ],
   meta: {
     label: "Currently",
-    items: ["Full-Stack Engineering", "NEX TECH", "Islamabad, Pakistan"],
+    items: ["Full-Stack Developer", "NEX TECH", "Islamabad, Pakistan"],
   },
 };
 
@@ -55,7 +55,7 @@ export const experienceSection = {
 
 export const educationSection = {
   eyebrow: "05 / Education",
-  heading: "The foundation behind the engineering.",
+  heading: "The foundation behind the full-stack development.",
 };
 
 export const contactSection = {

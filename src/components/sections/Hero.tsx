@@ -224,7 +224,7 @@ export function Hero() {
                     Islamabad, PK
                   </span>
                   <span className="font-mono text-[0.62rem] tracking-[0.14em] text-ink-3">
-                    est. 2022 — engineering
+                    est. 2022 — full stack dev.
                   </span>
                 </div>
               </div>

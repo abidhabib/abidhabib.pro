@@ -3,7 +3,7 @@ import { Reveal } from "@/components/ui-custom/Reveal";
 
 export function Approach() {
   return (
-    <section id="approach" aria-label="Engineering philosophy" className="relative">
+    <section id="approach" aria-label="Dev philosophy" className="relative">
       {/* Deep editorial band */}
       <div className="relative overflow-hidden bg-deep text-[#f2f2ef]">
         {/* Blueprint grid + aurora atmosphere */}
