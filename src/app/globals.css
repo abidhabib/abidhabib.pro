@@ -1,0 +1,187 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ---------------------------------------------------------------------------
+   Design tokens — quiet-confidence editorial system
+   Palette: warm paper neutrals + restrained copper accent
+--------------------------------------------------------------------------- */
+@theme inline {
+  /* Editorial palette */
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-ink-3: var(--ink-3);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-deep: var(--deep);
+  --color-deep-2: var(--deep-2);
+  --color-deep-line: var(--deep-line);
+  --color-accent: var(--accent);
+  --color-accent-strong: var(--accent-strong);
+  --color-accent-soft: var(--accent-soft);
+
+  /* Typography */
+  --font-display: var(--font-manrope), "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-body: var(--font-inter), "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-plex-mono), "IBM Plex Mono", ui-monospace, "SFMono-Regular", monospace;
+
+  /* Minimal shadcn compatibility layer */
+  --color-background: var(--bg);
+  --color-foreground: var(--ink);
+  --color-primary: var(--ink);
+  --color-primary-foreground: var(--surface);
+  --color-border: var(--line);
+  --color-ring: var(--accent);
+}
+
+:root {
+  --bg: #f7f7f5;
+  --surface: #ffffff;
+  --ink: #181818;
+  --ink-2: #676767;
+  --ink-3: #929292;
+  --line: #e6e6e2;
+  --line-strong: #d8d8d1;
+  --deep: #202323;
+  --deep-2: #191b1a;
+  --deep-line: #303330;
+  --accent: #986d4e;
+  --accent-strong: #77523a;
+  --accent-soft: #f0e9e2;
+  --radius: 0.625rem;
+}
+
+.dark {
+  --bg: #111312;
+  --surface: #191b1a;
+  --ink: #f2f2ef;
+  --ink-2: #a3a5a1;
+  --ink-3: #7d7f7b;
+  --line: #303330;
+  --line-strong: #3d403c;
+  --deep: #191b1a;
+  --deep-2: #141615;
+  --deep-line: #303330;
+  --accent: #b08563;
+  --accent-strong: #c79a77;
+  --accent-soft: #23211d;
+}
+
+/* ---------------------------------------------------------------------------
+   Base
+--------------------------------------------------------------------------- */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5.5rem;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.7;
+    text-rendering: optimizeLegibility;
+    overflow-x: clip;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+  }
+
+  ::selection {
+    background: var(--accent);
+    color: #fff;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  img {
+    user-select: none;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Utilities — layout rhythm, editorial type, technical detail
+--------------------------------------------------------------------------- */
+@utility container-editorial {
+  width: 100%;
+  max-width: 1320px;
+  margin-inline: auto;
+  padding-inline: clamp(1.25rem, 4.5vw, 4rem);
+}
+
+@utility section-pad {
+  padding-block: clamp(4.5rem, 9vw, 10rem);
+}
+
+@utility eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+@utility display-hero {
+  font-size: clamp(2.9rem, 5.9vw, 5.75rem);
+  line-height: 1.0;
+  letter-spacing: -0.035em;
+  font-weight: 700;
+}
+
+@utility display-section {
+  font-size: clamp(2rem, 4vw, 3.75rem);
+  line-height: 1.04;
+  letter-spacing: -0.03em;
+  font-weight: 700;
+}
+
+@utility bg-blueprint {
+  background-image: linear-gradient(to right, rgb(24 24 24 / 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(24 24 24 / 0.04) 1px, transparent 1px);
+  background-size: 76px 76px;
+}
+
+@utility bg-blueprint-dark {
+  background-image: linear-gradient(to right, rgb(242 242 239 / 0.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(242 242 239 / 0.045) 1px, transparent 1px);
+  background-size: 76px 76px;
+}
+
+@utility hairline-t {
+  border-top: 1px solid var(--line);
+}
+
+@utility mask-fade-y {
+  mask-image: linear-gradient(to bottom, transparent, black 12%, black 88%, transparent);
+}
+
+/* Refined scrollbar for modal content */
+@utility scrollbar-fine {
+  scrollbar-width: thin;
+  scrollbar-color: var(--line-strong) transparent;
+}

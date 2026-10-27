@@ -1,0 +1,1434 @@
+# MASTER PROMPT: BUILD A PREMIUM FULL-STACK DEVELOPER PORTFOLIO
+
+## 1. Objective
+
+Build a complete, production-ready personal portfolio website for **Abid Habib**, a Full-Stack Software Engineer specializing in React.js, Node.js, Express.js, MySQL, Linux infrastructure, REST APIs, and application deployment.
+
+This must be a distinctive, sophisticated, professional developer portfolio that feels custom-designed by a highly skilled digital design studio.
+
+The design must communicate:
+
+- Engineering credibility
+- Technical depth
+- Strong attention to detail
+- Professional maturity
+- Modern software craftsmanship
+- Premium personal branding
+- Clarity, performance, and reliability
+
+Avoid generic AI-generated visual patterns. The site should feel intentional, original, mature, and expensive without being flashy.
+
+**Design philosophy:** Quiet confidence. Strong typography, disciplined grids, exceptional spacing, subtle motion, and meaningful technical storytelling.
+
+The final website must be fully responsive, functional, accessible, SEO-friendly, performant, and deployable.
+
+---
+
+# 2. Technology Stack
+
+Use:
+
+**Core**
+- React.js
+- Vite
+- JavaScript (ES6+)
+- Tailwind CSS
+- Framer Motion or Motion for React
+- Lucide React icons
+
+**Routing and utilities**
+- React Router, only if multiple routes are necessary
+- React hooks
+- Native Intersection Observer where appropriate
+- Lightweight form handling
+- Reusable data-driven components
+
+**Design**
+- CSS custom properties for design tokens
+- Fluid typography using clamp()
+- CSS Grid and Flexbox
+- Mobile-first responsive design
+- Semantic HTML5
+
+**Performance**
+- Lazy loading
+- Optimized images
+- Code splitting where useful
+- Minimal dependencies
+- No unnecessary animation libraries
+
+Do not add Next.js, Redux, databases, or backend services unless a concrete feature requires them.
+
+The portfolio should work as a static frontend suitable for deployment to Vercel, Netlify, or an Ubuntu VPS with Nginx.
+
+---
+
+# 3. Visual Identity
+
+## Overall Design Direction
+
+Create a luxury editorial technology portfolio combining:
+
+1. Swiss editorial design
+2. Premium SaaS interface precision
+3. Contemporary architectural minimalism
+4. High-end typography
+5. Subtle developer-oriented technical details
+
+The website should look equally polished on a 1440px desktop and a 390px mobile screen.
+
+### Color Palette
+
+Use a restrained, primarily monochromatic palette.
+
+**Light theme, primary**
+- Background: #F7F7F5
+- Secondary background: #FFFFFF
+- Primary text: #181818
+- Secondary text: #676767
+- Subtle text: #929292
+- Borders: #E6E6E2
+- Deep surface: #202323
+
+**Accent**
+- Muted copper / bronze: #986D4E
+- Accent hover: #77523A
+
+Use the accent sparingly. It should not dominate the design.
+
+**Dark theme, optional**
+- Background: #111312
+- Surfaces: #191B1A
+- Primary text: #F2F2EF
+- Secondary text: #A3A5A1
+- Borders: #303330
+
+The default design should use the light theme.
+
+### Typography
+
+Typography is the primary visual feature.
+
+Recommended combination:
+
+- Display headings: **Manrope** or **Satoshi**
+- Body: **Inter**
+- Technical labels: **IBM Plex Mono**
+
+Use properly licensed web fonts and efficient font loading.
+
+**Typography rules**
+- Large, bold, tightly controlled hero typography
+- Clear hierarchy between sections
+- Strong readability
+- Slight negative tracking for display headlines
+- Relaxed line height for paragraphs
+- Small uppercase or monospaced eyebrow labels
+- Carefully selected font weights
+- No excessive gradients or outlined display text
+
+Use responsive font sizing.
+
+Suggested scale:
+- Hero: clamp(3.2rem, 7vw, 7rem)
+- Section titles: clamp(2rem, 4vw, 4rem)
+- Card headings: 1.3rem to 1.7rem
+- Body: 1rem to 1.125rem
+- Metadata: 0.75rem to 0.875rem
+
+---
+
+# 4. Global Layout
+
+Use a maximum content width of approximately 1320px.
+
+Recommended horizontal gutters:
+- Large desktop: 64px
+- Laptop: 40px
+- Tablet: 28px
+- Mobile: 20px
+
+Use generous section spacing, typically 100–160px on desktop and 72–100px on mobile.
+
+Establish a consistent 8px spacing system.
+
+Avoid excessive card stacking.
+
+The layout should combine:
+- Full-width editorial sections
+- Asymmetric grids
+- Elegant dividers
+- Large typography
+- Technical metadata
+- Subtle backgrounds
+- High-quality project presentations
+
+The website must have a coherent visual rhythm rather than every section looking like an isolated dashboard.
+
+---
+
+# 5. Personal Information
+
+**Name:** Abid Habib
+
+**Professional title:** Full-Stack Software Engineer
+
+**Location:** Islamabad, Pakistan
+
+**Email:** abid.habib@outlook.com
+
+**Phone:** +92 344 4292 065
+
+**Website:** https://abidhabib.pro
+
+**Profile image:** https://abidhabib.pro/dp.png
+
+**GitHub:** https://github.com/abidhabib
+
+**LinkedIn:** https://www.linkedin.com/in/abid-h-b8056a242
+
+**WhatsApp:** https://wa.me/923444292065
+
+**Instagram:** https://instagram.com/abid._.habib
+
+**Fiverr:** https://www.fiverr.com/hammad43
+
+Use Lucide React for general interface icons.
+
+Use official SVG brand icons for third-party services when Lucide does not provide the correct brand icon.
+
+Do not use inaccurate brand icon substitutes.
+
+---
+
+# 6. Website Sections
+
+Build the following sections in this order.
+
+## 6.1 Navigation
+
+Create a minimal premium navigation bar.
+
+Left:
+- AH. custom typographic monogram
+- Optional small label: Abid Habib
+
+Center or right:
+- Home
+- About
+- Expertise
+- Work
+- Experience
+- Education
+- Contact
+
+Right:
+- A tasteful "Let's Talk" CTA
+- External arrow icon
+
+Navigation should be sticky or fixed with appropriate scroll offset.
+
+Styling:
+- Slight transparency after scrolling
+- Subtle backdrop blur
+- Thin bottom border
+- Smooth visual transition
+- No exaggerated glassmorphism
+
+On mobile:
+- Monogram left
+- Menu toggle right
+- Full-width accessible mobile navigation
+- Smooth, short opening animation
+- Working close button
+- Close after selecting a section
+- Close on Escape
+- Proper keyboard focus management
+
+Do not make the mobile navigation visually complicated.
+
+---
+
+## 6.2 Hero Section
+
+The hero is the most important visual element.
+
+Design a premium editorial hero featuring strong typography, carefully controlled white space, and a portrait.
+
+### Hero Content
+
+Eyebrow:
+
+FULL-STACK SOFTWARE ENGINEER
+
+Main heading:
+
+**Engineering digital experiences with purpose.**
+
+Supporting text:
+
+"I'm Abid Habib, a Full-Stack Software Engineer building scalable web applications, reliable backend systems, and thoughtful digital experiences using modern JavaScript technologies."
+
+Supporting specialization:
+
+"React · Node.js · MySQL · Linux Infrastructure"
+
+Location metadata:
+
+"Based in Islamabad, Pakistan"
+
+Primary CTA:
+- Explore My Work
+
+Secondary CTA:
+- Get in Touch
+
+Optional social link:
+- GitHub
+- LinkedIn
+
+### Hero Visual
+
+Use the provided portrait image:
+
+https://abidhabib.pro/dp.png
+
+Present it in a large architectural image container with premium cropping.
+
+Important:
+- Preserve the original face
+- Do not generate or alter facial features
+- Do not apply cartoon, illustration, or artificial beauty filters
+- Preserve natural skin and photographic detail
+- Use object-fit: cover with controllable positioning
+
+Use a neutral image container with a restrained border and subtle background treatment.
+
+The layout should be asymmetric but balanced:
+- Desktop: roughly 60% content, 40% portrait
+- Mobile: text first, portrait underneath or in a thoughtfully adapted editorial layout
+
+### Hero Animation
+
+On initial load:
+1. Eyebrow fades upward
+2. Main heading reveals with subtle stagger
+3. Description appears
+4. CTA buttons appear
+5. Portrait fades in with minimal translation
+
+Keep the entire sequence short and polished.
+
+No bouncing letters, huge scaling, spinning objects, or excessive blur effects.
+
+---
+
+## 6.3 Introduction / About Me
+
+Section label:
+
+01 / ABOUT
+
+Headline:
+
+**Technology is the tool. Solving problems is the work.**
+
+Content:
+
+"I'm a Full-Stack Software Engineer with experience developing modern web applications, backend APIs, and database-driven business systems.
+
+My work focuses on connecting clean frontend experiences with reliable backend architecture, efficient databases, and production-ready infrastructure.
+
+From responsive interfaces and administrative dashboards to financial workflows, authentication systems, and containerized deployments, I work across the application lifecycle.
+
+I enjoy understanding how systems operate beyond the interface, from SQL queries and server processes to Nginx configuration, Docker containers, and Linux-based infrastructure.
+
+Beyond conventional web development, I explore local AI models, developer tooling, automation, and software ideas that solve practical problems."
+
+### About Layout
+
+Use:
+- Large editorial heading
+- Two-column text layout on desktop
+- Small descriptive side metadata
+- Minimal line dividers
+- No generic illustrations
+
+Optional small fact strip:
+- Full-Stack Engineering
+- Backend & Databases
+- Linux Infrastructure
+- AI & Automation
+
+Do not invent client counts, years of experience beyond supplied employment dates, completed project totals, or business metrics.
+
+---
+
+# 7. Technical Expertise
+
+Section label:
+
+02 / EXPERTISE
+
+Heading:
+
+**A practical stack, from interface to infrastructure.**
+
+Present technical skills in carefully structured categories.
+
+Do not show 60 identical colorful skill cards or fake percentage meters.
+
+Build a premium editorial grid where each category has:
+- Category number
+- Category title
+- One concise description
+- Grouped technical skills
+- Subtle divider or border
+- Small functional icon
+
+### Category 1: Frontend Engineering
+
+Primary:
+- JavaScript (ES6+)
+- React.js
+- Vite
+- HTML5
+- CSS3
+- Tailwind CSS
+- Material UI
+- Responsive Web Design
+- React Hooks
+- REST API Integration
+
+Additional familiarity:
+- Redux Toolkit
+- SCSS
+- Framer Motion
+- Component Architecture
+- Client-Side Routing
+- State Management
+- Form Validation
+- Performance Optimization
+
+### Category 2: Backend Engineering
+
+Primary:
+- Node.js
+- Express.js
+- RESTful API Development
+- Authentication
+- JWT
+- Sessions and Cookies
+- Authorization Middleware
+- Role-Based Access Control
+- CRUD Operations
+- Business Logic Implementation
+
+Additional:
+- API Validation
+- Error Handling
+- File Uploads
+- Scheduled Jobs
+- Payment Integration
+- Third-Party APIs
+- Webhooks
+
+### Category 3: Database Engineering
+
+Primary:
+- MySQL
+- MariaDB
+- SQL
+- phpMyAdmin
+- Relational Database Design
+- SQL JOINs
+- Subqueries
+- Aggregation Queries
+- Database Constraints
+- Foreign Keys
+- Indexing
+- Query Optimization
+- Backup and Recovery
+
+Additional familiarity:
+- PostgreSQL
+- MongoDB
+- Sequelize
+- Knex
+
+### Category 4: DevOps & Infrastructure
+
+Primary:
+- Ubuntu Linux
+- Linux CLI
+- Bash
+- SSH
+- VPS Administration
+- Nginx
+- Reverse Proxy
+- PM2
+- Docker
+- Docker Compose
+- CloudPanel
+- SSL/TLS
+- Let's Encrypt / Certbot
+- DNS Configuration
+- Cron Jobs
+- Git
+- GitHub
+- SCP
+- rsync
+- Server Troubleshooting
+
+Additional:
+- Static Frontend Deployment
+- Process Monitoring
+- Resource Management
+- Log Inspection
+- Firewall Configuration
+- Database Backups
+
+### Category 5: Automation & API Tooling
+
+- Python
+- Bash Scripting
+- Python Requests
+- curl
+- HTTP/HTTPS
+- JSON
+- API Testing
+- Automation Scripts
+- Retry Handling
+- Scheduled Operations
+- Networking Fundamentals
+
+### Category 6: AI & Developer Tooling
+
+- Ollama
+- Open WebUI
+- Local Large Language Models
+- Qwen Models
+- AI Coding Assistants
+- OpenRouter
+- Prompt Engineering
+- Quantized Models
+- CPU-Based Inference
+- Context Window Configuration
+- Self-Hosted AI Environments
+
+### Additional Technical Familiarity
+
+Show separately and less prominently:
+- TypeScript
+- Next.js
+- PHP
+- Laravel
+- WordPress
+- Machine Learning Fundamentals
+- Pandas
+- scikit-learn
+- TensorFlow
+- PyTorch
+
+Do not label these additional tools as expert-level technologies without evidence.
+
+---
+
+# 8. Selected Work / Core Projects
+
+Section label:
+
+03 / SELECTED WORK
+
+Heading:
+
+**Systems built to solve real problems.**
+
+Subheading:
+
+"A selection of applications, systems, and technical infrastructure spanning frontend engineering, backend development, databases, and deployment."
+
+Use functional, neutral project titles.
+
+Do not use previous brand names, commercial site names, referral-platform names, or historical business domains.
+
+### Project 01: Membership & Earnings Management Platform
+
+Category:
+Full-Stack Web Application
+
+Technology:
+React.js, Node.js, Express.js, MySQL, Tailwind CSS
+
+Description:
+
+"An end-to-end membership and transaction management system supporting user registration, subscription plans, hierarchical team structures, automated activity-based calculations, digital wallets, administrative workflows, and reporting."
+
+Core features:
+- User registration and authentication
+- Membership plans
+- Referral hierarchy management
+- Automated calculation workflows
+- Wallet management
+- Withdrawal processing
+- Admin approval system
+- Notifications
+- Financial reporting
+- SQL-backed data processing
+
+### Project 02: Financial Wallet & Transaction Engine
+
+Category:
+Backend Engineering
+
+Technology:
+Node.js, Express.js, MySQL
+
+Description:
+
+"A backend transaction system designed to manage digital balances, internal credits, withdrawal requests, fee calculations, and administrative financial operations."
+
+Core features:
+- Ledger-style transaction records
+- Balance processing
+- Withdrawal request lifecycle
+- Fee calculations
+- Approval and rejection handling
+- Transaction history
+- Financial reporting and reconciliation logic
+
+Do not claim formal banking compliance or independently audited accounting.
+
+### Project 03: Cryptocurrency Payment Monitoring System
+
+Category:
+Payment Integration
+
+Technology:
+Node.js, Blockchain APIs, MySQL
+
+Description:
+
+"A cryptocurrency payment integration workflow for managing invoice records, transaction identifiers, address allocation, payment status monitoring, and blockchain confirmation checks."
+
+Core features:
+- Crypto invoice records
+- Blockchain transaction lookup
+- Transaction hash handling
+- Payment confirmation workflows
+- Invoice expiration
+- Payment status synchronization
+- Error and timeout handling
+
+### Project 04: Multi-Branch Business Management System
+
+Category:
+Business Software
+
+Technology:
+Full-Stack Web Development, SQL, Role-Based Access
+
+Description:
+
+"A multi-branch operations management system designed to centralize inventory, sales, supplier activity, stock transfers, expenses, payment tracking, and business reporting."
+
+Core features:
+- Branch management
+- Inventory
+- Sales
+- Stock transfers
+- Supplier records
+- Expenses
+- Payment tracking
+- Role-based access
+- Centralized reporting
+
+### Project 05: Containerized Backend Infrastructure
+
+Category:
+DevOps & Backend
+
+Technology:
+Docker, Docker Compose, Node.js, Express.js, MySQL, Nginx
+
+Description:
+
+"A containerized REST API infrastructure integrating an Express backend, MySQL database, persistent storage, environment configuration, reverse proxy routing, and HTTPS."
+
+Core features:
+- Multi-container services
+- Database persistence
+- Environment management
+- API routing
+- Reverse proxy
+- SSL certificate management
+- Production deployment
+- Troubleshooting
+
+### Project 06: Browser-Based Remote Linux Desktop
+
+Category:
+Infrastructure Engineering
+
+Technology:
+Ubuntu, Docker, XFCE, Nginx, SSL/TLS
+
+Description:
+
+"A self-hosted remote desktop environment accessible through a web browser, configured with container isolation, custom domain routing, secure HTTPS, and resource optimization."
+
+Core features:
+- Browser-accessible Linux environment
+- Container deployment
+- Desktop application access
+- Nginx reverse proxy
+- HTTPS
+- Memory optimization
+- Service management
+
+### Project 07: Enterprise Admin & Analytics Dashboard
+
+Category:
+Full-Stack Dashboard
+
+Technology:
+React.js, Express.js, MySQL
+
+Description:
+
+"An administrative analytics interface designed to manage operational activity, users, approvals, transactions, notifications, and financial summaries."
+
+Core features:
+- User management
+- Reporting
+- Transaction tables
+- Admin actions
+- Search and filtering
+- Activity metrics
+- Financial aggregation
+- Role-based administration
+
+### Project 08: Product Catalog Management Application
+
+Category:
+Frontend Engineering
+
+Technology:
+React.js, Vite, Axios, Material UI, SCSS
+
+Description:
+
+"A responsive product administration application supporting structured CRUD operations, reusable components, modal dialogs, API synchronization, and interactive data management."
+
+### Project 09: Linux Automation & Backup System
+
+Category:
+Infrastructure Automation
+
+Technology:
+Ubuntu, Bash, Cron, MySQL, Nginx
+
+Description:
+
+"A collection of server administration and automation workflows covering scheduled database backups, file retention, resource cleanup, system monitoring, and operational maintenance."
+
+### Project 10: Local AI Development Environment
+
+Category:
+AI & Developer Tools
+
+Technology:
+Ollama, Open WebUI, Local LLMs, Linux
+
+Description:
+
+"A self-hosted environment for testing and using local AI coding models, evaluating quantization, memory consumption, context sizes, inference speed, and developer integration."
+
+### Project presentation requirements
+
+Create 4–6 prominent case-study cards in the main section, and an expandable or secondary collection for remaining projects.
+
+Each project card should contain:
+- Project number
+- Category
+- Title
+- Concise description
+- Primary technologies
+- A meaningful project visualization
+- "View Details" interaction
+
+Do not invent repository URLs, live demo links, testimonials, screenshots, user counts, revenue numbers, performance metrics, or completed features.
+
+If verified real screenshots are provided, use those.
+
+Otherwise, build tasteful custom interface mockups with HTML/CSS reflecting the project's real functionality.
+
+Avoid generic stock photographs and unrelated AI-generated dashboard screenshots.
+
+For more detailed projects, create individual case-study views or modals containing:
+- Overview
+- Problem
+- Approach
+- Architecture
+- Key capabilities
+- Technologies
+- Engineering considerations
+
+Only describe verified work. Do not invent measured outcomes.
+
+---
+
+# 9. Professional Experience
+
+Section label:
+
+04 / EXPERIENCE
+
+Heading:
+
+**Experience shaped by real-world engineering.**
+
+Create a refined vertical timeline with strong typography and subtle timeline indicators.
+
+## Full Stack Developer
+
+**NEX TECH**
+
+2024 — Present
+
+Description:
+
+"Building and maintaining full-stack web applications using React.js, Node.js, Express.js, and MySQL. Working across frontend interfaces, backend APIs, database operations, authentication, and production workflows."
+
+Responsibilities:
+- Develop full-stack web applications
+- Build administrative dashboards
+- Implement RESTful APIs
+- Design and manage MySQL databases
+- Develop role-based access systems
+- Implement authentication and session handling
+- Work on attendance management systems
+- Develop ROI-oriented platform workflows
+- Integrate frontend and backend services
+- Debug production issues
+- Maintain responsive user experiences
+
+Technology:
+React.js, Node.js, Express.js, MySQL, JavaScript, Tailwind CSS
+
+## React JS Developer
+
+**SIL Lahore**
+
+2022 — 2023
+
+Description:
+
+"Developed responsive frontend applications using React.js, Redux, Tailwind CSS, and Material UI, with a focus on reusable components, application performance, maintainability, and API integration."
+
+Responsibilities:
+- Develop reusable React components
+- Implement responsive application interfaces
+- Integrate frontend applications with REST APIs
+- Manage application state
+- Create interactive dashboards and UI components
+- Improve frontend structure and maintainability
+- Optimize rendering and user experience
+
+Technology:
+React.js, JavaScript, Redux, Tailwind CSS, Material UI, REST APIs
+
+### Timeline Design
+
+Desktop:
+- Years on the left
+- Timeline marker in the middle
+- Job information on the right
+
+Mobile:
+- Compact single-column timeline
+
+Use thin strokes, refined spacing, and minimal animation.
+
+---
+
+# 10. Education
+
+Section label:
+
+05 / EDUCATION
+
+Heading:
+
+**The foundation behind the engineering.**
+
+Create three clean editorial education entries.
+
+## BS Information Technology
+
+**University of Sargodha**
+
+2018 — 2022
+
+"Studied core information technology and computer science concepts, including software development, database systems, programming, networking, and problem-solving."
+
+## Intermediate in Computer Science (ICS)
+
+**Govt High School**
+
+2015 — 2017
+
+"Developed foundational knowledge in computer science, programming concepts, logical thinking, and mathematics."
+
+## Web Development Course
+
+2020 — 2021
+
+"Studied HTML, CSS, JavaScript, React.js, responsive web design, and API integration, with practical application development."
+
+Do not invent a course institute, grade, scholarship, certificate, or achievement.
+
+Use consistent dates and visual styling.
+
+---
+
+# 11. Engineering Philosophy
+
+Section label:
+
+06 / APPROACH
+
+Heading:
+
+**Good software is more than a good-looking interface.**
+
+Present four principles:
+
+### 01. Build for Maintainability
+
+"Readable code, reusable components, and clear separation of responsibilities make systems easier to maintain and extend."
+
+### 02. Understand the Entire System
+
+"From frontend interactions to database queries, deployment, and infrastructure, understanding the full application lifecycle enables better technical decisions."
+
+### 03. Prioritize Reliability
+
+"Thoughtful validation, error handling, access control, and operational practices matter as much as visible functionality."
+
+### 04. Keep Learning Through Building
+
+"Practical experimentation with Linux, automation, infrastructure, and AI tooling helps turn new technologies into useful engineering skills."
+
+Use a two-column or four-column minimal editorial layout.
+
+No oversized decorative icons.
+
+---
+
+# 12. Contact Section
+
+Section label:
+
+07 / CONTACT
+
+Heading:
+
+**Have something worth building?**
+
+Subheading:
+
+"I'm open to meaningful software engineering opportunities, collaborations, and technically interesting projects."
+
+Create a large premium call-to-action area.
+
+Primary contact:
+**abid.habib@outlook.com**
+
+Main CTA:
+"Start a Conversation"
+
+The CTA should open an email client using a mailto link.
+
+Other contact options:
+- LinkedIn
+- GitHub
+- WhatsApp
+- Instagram
+- Fiverr
+
+Phone:
++92 344 4292 065
+
+Location:
+Islamabad, Pakistan
+
+### Contact Form
+
+An optional contact form may include:
+- Name
+- Email
+- Subject
+- Message
+- Send Message
+
+However, do not build a fake working form.
+
+If no backend or email service is configured, either omit the form or provide a clearly functional mailto-based alternative.
+
+If a contact form is included, implement real validation, submission handling, error states, and spam protection with an actual configured provider.
+
+---
+
+# 13. Footer
+
+Create a clean, restrained footer.
+
+Left:
+AH. / Abid Habib
+
+Description:
+"Full-Stack Software Engineer focused on thoughtful digital systems."
+
+Right:
+Navigation links and social links.
+
+Bottom:
+"© [Current Year] Abid Habib. All rights reserved."
+
+Use the current year dynamically.
+
+Include:
+- Back to top
+- Email
+- GitHub
+- LinkedIn
+
+No generic inspirational slogans.
+
+---
+
+# 14. Animation & Interaction System
+
+Animations should be elegant and subtle.
+
+## Motion Principles
+
+- Animate only when movement improves visual clarity
+- Prefer opacity and transform
+- Avoid layout-shifting animations
+- Keep animation duration mostly between 200ms and 650ms
+- Use consistent easing
+- Respect prefers-reduced-motion
+- Avoid animation on every small element
+
+### Recommended Animations
+
+**Hero**
+- Staggered text reveal
+- Gentle portrait appearance
+- Refined CTA appearance
+
+**Scroll sections**
+- Fade upward 12–24px
+- Once on viewport entry
+- No excessive stagger
+
+**Project cards**
+- 2–4px hover lift
+- Subtle border transition
+- Minimal image zoom
+- Small arrow translation
+
+**Navigation**
+- Animated active indicator
+- Smooth hover transitions
+- Understated scroll appearance
+
+**Buttons**
+- Background/color transition
+- Arrow movement by a few pixels
+- Clear keyboard focus state
+
+**Timeline**
+- Subtle marker appearance
+- Light fade-in
+
+### Animation Restrictions
+
+Do not implement:
+- Large floating spheres
+- Excessive parallax
+- Random particles
+- Neon glow
+- Glitch effects
+- Heavy three-dimensional animations
+- Scroll hijacking
+- Large magnetic cursors
+- Constantly rotating elements
+- Overcomplicated page transitions
+- Fake terminal typing as the primary hero
+
+The site must remain pleasant during long browsing sessions.
+
+---
+
+# 15. Responsive Design Requirements
+
+Support:
+- 360px small mobile
+- 390px mobile
+- 430px large mobile
+- 768px tablet
+- 1024px laptop
+- 1280px desktop
+- 1440px desktop
+- 1920px wide screens
+
+## Mobile Requirements
+
+- No horizontal overflow
+- Proper readable font sizes
+- Comfortable touch targets
+- Functional mobile menu
+- Balanced section spacing
+- Projects stacked elegantly
+- Portrait scales properly
+- No clipped headlines
+- Contact links accessible
+- Text wraps naturally
+- Timeline remains readable
+- No small, cramped technology tags
+
+## Desktop Requirements
+
+- Strong editorial hierarchy
+- Intentional use of negative space
+- Refined asymmetric layouts
+- Balanced grids
+- Optimized image proportions
+- Consistent content width
+
+Avoid making the desktop version simply a wider mobile layout.
+
+---
+
+# 16. Icon Design
+
+Use Lucide React consistently for general UI.
+
+Examples:
+- ArrowUpRight
+- ArrowRight
+- Github
+- Linkedin, if available in installed icon set
+- Mail
+- Phone
+- MapPin
+- Menu
+- X
+- ExternalLink
+- Database
+- Server
+- Code2
+- Terminal
+- Layers
+- ShieldCheck
+- Cloud
+- ChevronDown
+
+Use brand SVGs from a maintained icon source for missing social brand icons.
+
+Icon guidelines:
+- Mostly 16–20px
+- Consistent stroke widths
+- No large decorative icons
+- Do not put icons on every label
+- Keep icon usage functional
+
+---
+
+# 17. SEO & Professional Metadata
+
+Configure:
+
+Title:
+"Abid Habib | Full-Stack Software Engineer"
+
+Meta description:
+"Portfolio of Abid Habib, a Full-Stack Software Engineer specializing in React.js, Node.js, MySQL, REST APIs, and Linux infrastructure."
+
+Canonical URL:
+https://abidhabib.pro/
+
+Open Graph:
+- Title
+- Description
+- URL
+- Image
+
+Twitter/X preview metadata where appropriate.
+
+Add JSON-LD structured data using schema.org Person.
+
+Include:
+- Name
+- Job title
+- Website
+- GitHub
+- LinkedIn
+- Professional specialization
+
+Also add:
+- favicon
+- robots.txt
+- sitemap.xml
+- correct semantic heading hierarchy
+- descriptive image alt attributes
+
+Use only verified profile information.
+
+---
+
+# 18. Accessibility
+
+The site must achieve strong WCAG 2.2 AA alignment where practical.
+
+Requirements:
+- Semantic HTML
+- Keyboard navigation
+- Visible focus states
+- Appropriate aria labels
+- Accessible mobile navigation
+- Color contrast
+- Reduced motion support
+- Correct button/link semantics
+- Proper form labels
+- No hover-only essential interactions
+- Sufficient touch target dimensions
+
+Icons used decoratively should not create redundant screen-reader announcements.
+
+---
+
+# 19. Performance Requirements
+
+Aim for excellent Lighthouse results, ideally 90+ in Performance, Accessibility, Best Practices, and SEO under realistic production testing.
+
+Priorities:
+- Optimized portrait image
+- WebP/AVIF where appropriate
+- Responsive image sizing
+- Lazy loading below-the-fold assets
+- Optimized web fonts
+- Limited JavaScript dependencies
+- Proper caching
+- Efficient animations
+- Avoid layout shifts
+- Avoid unnecessary network requests
+
+Do not compromise clarity or accessibility to chase performance scores.
+
+---
+
+# 20. Component Architecture
+
+Use an organized, maintainable project structure.
+
+Suggested:
+
+src/
+- assets/
+- components/
+  - layout/
+  - navigation/
+  - ui/
+  - projects/
+- sections/
+  - Hero.jsx
+  - About.jsx
+  - Expertise.jsx
+  - Projects.jsx
+  - Experience.jsx
+  - Education.jsx
+  - Philosophy.jsx
+  - Contact.jsx
+- data/
+  - personal.js
+  - skills.js
+  - projects.js
+  - experience.js
+  - education.js
+- hooks/
+- styles/
+  - globals.css
+  - tokens.css
+- App.jsx
+- main.jsx
+
+Use semantic component names.
+
+Keep portfolio content in structured data files rather than duplicating text across components.
+
+Do not create unnecessary layers of abstraction.
+
+Avoid overly fragmented components with no reusability benefit.
+
+---
+
+# 21. Quality Requirements
+
+All displayed information must be based on the supplied profile.
+
+Do not invent:
+- Awards
+- Certifications
+- Client testimonials
+- Project metrics
+- Employment companies
+- Educational institutions
+- Live demos
+- GitHub repositories
+- Revenue
+- User counts
+- Performance improvements
+- Published research
+- Professional endorsements
+
+Do not present planned projects as successfully launched products.
+
+Use confident but accurate writing.
+
+Do not use generic phrases such as:
+- "Passionate ninja"
+- "Coding wizard"
+- "Turning coffee into code"
+- "Pixel-perfect magician"
+- "Crafting digital magic"
+- "10x developer"
+- "Innovating the future"
+
+Avoid a biography that sounds like a marketing agency wrote it.
+
+The copy should feel credible to technical recruiters, engineering managers, and serious clients.
+
+---
+
+# 22. Final Deliverables
+
+Generate a complete working React + Vite project.
+
+Include:
+
+1. All necessary source files
+2. Package configuration
+3. Tailwind setup
+4. Complete responsive styling
+5. Working navigation
+6. Hero with real portrait
+7. All portfolio content
+8. Functional project details
+9. Experience timeline
+10. Education section
+11. Contact functionality
+12. Responsive footer
+13. Animations
+14. SEO configuration
+15. Accessibility features
+16. README with installation instructions
+17. Production build instructions
+
+All links must be functional.
+
+Do not use dummy links such as href="#", unless they point to real existing section IDs.
+
+Do not fabricate project links.
+
+Remove unused starter files and dependencies.
+
+Ensure that:
+- npm install works
+- npm run dev works
+- npm run build works
+- No console errors occur
+- No broken imports exist
+- No React key warnings occur
+- Navigation anchors work
+- Mobile menu works
+- External links open appropriately
+- Email/phone/WhatsApp links work
+- Images load correctly
+- Responsive layouts do not overflow
+
+---
+
+# 23. Design Quality Checklist
+
+Before finalizing, evaluate the site against these criteria:
+
+**Visual quality**
+- Does it feel custom designed?
+- Is the typography distinctive and disciplined?
+- Does the whitespace feel intentional?
+- Is the contrast balanced?
+- Are sections visually connected?
+- Is the project presentation convincing?
+- Is the portrait integrated elegantly?
+
+**Professional credibility**
+- Are technical claims accurate?
+- Is engineering expertise easy to understand?
+- Is relevant experience immediately visible?
+- Are the strongest projects prioritized?
+- Is the copy concise and meaningful?
+
+**Technical quality**
+- Is the component architecture maintainable?
+- Is the site responsive?
+- Are animations efficient?
+- Are accessibility requirements respected?
+- Does the site build successfully?
+- Are all links valid?
+
+**Overall**
+- Would this portfolio feel appropriate for a senior software engineer, serious freelancer, or developer seeking international opportunities?
+- Does it look premium without trying too hard?
+- Does it avoid obvious template patterns?
+
+If any section feels generic, redesign it rather than adding more decoration.
+
+---
+
+# 24. Implementation Instructions
+
+First, define the design system and component structure.
+
+Then implement the page section by section.
+
+Use the exact professional information supplied in this prompt.
+
+Do not replace real content with lorem ipsum.
+
+Prioritize the visual composition and mobile responsiveness before adding optional effects.
+
+Use actual React components and production-ready styling, not pseudocode.
+
+Run available build checks and correct errors.
+
+Do not claim testing succeeded unless it was actually executed.
+
+The final output should look and behave like a carefully crafted, professionally commissioned developer portfolio.
+
+**Final creative direction:**
+
+Create an editorial technology portfolio where craftsmanship is expressed through typography, layout, rhythm, and thoughtful interaction.
+
+Minimal, but not empty.
+
+Luxury, but not pretentious.
+
+Technical, but not visually cluttered.
+
+Memorable, but not gimmicky.
+
+Build something that represents a serious full-stack software engineer rather than another generic developer template.
