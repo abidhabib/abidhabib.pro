@@ -20,16 +20,40 @@ const icons: Record<string, LucideIcon> = {
   cpu: Cpu,
 };
 
+/* Code-flavored watermark per discipline */
+const glyphs: Record<string, string> = {
+  layout: "</>",
+  server: "{ }",
+  database: "SQL",
+  terminal: "$_",
+  workflow: "=>",
+  cpu: "0/1",
+};
+
 function CategoryCard({ category }: { category: SkillCategory }) {
   const Icon = icons[category.icon] ?? Layout;
+  const glyph = glyphs[category.icon] ?? "</>";
 
   return (
-    <article className="group flex h-full flex-col rounded-2xl border border-line bg-surface p-7 transition-colors duration-300 hover:border-line-strong md:p-8">
+    <article className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-line bg-surface p-7 transition-all duration-300 hover:-translate-y-1 hover:border-line-strong hover:shadow-[0_24px_50px_-30px_rgb(152_109_78/0.4)] md:p-8">
+      {/* Gradient top edge — reveals on hover */}
+      <span
+        aria-hidden="true"
+        className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-accent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+      />
+      {/* Code watermark */}
+      <span
+        aria-hidden="true"
+        className="pointer-events-none absolute -bottom-4 right-4 select-none font-mono text-[3.4rem] font-bold leading-none text-ink/[0.045] transition-colors duration-500 group-hover:text-accent/[0.12]"
+      >
+        {glyph}
+      </span>
+
       <div className="flex items-center justify-between">
         <span className="font-mono text-[0.68rem] tracking-[0.2em] text-accent">
           {category.index}
         </span>
-        <span className="flex h-9 w-9 items-center justify-center rounded-full border border-line text-ink-2 transition-colors duration-300 group-hover:border-accent/40 group-hover:text-accent">
+        <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-accent/25 bg-accent-soft text-accent-strong transition-all duration-300 group-hover:border-accent/50 group-hover:shadow-[0_0_0_4px_rgb(152_109_78/0.1)]">
           <Icon className="h-4 w-4" aria-hidden="true" strokeWidth={1.75} />
         </span>
       </div>

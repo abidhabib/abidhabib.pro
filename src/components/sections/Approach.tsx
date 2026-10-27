@@ -5,8 +5,31 @@ export function Approach() {
   return (
     <section id="approach" aria-label="Engineering philosophy" className="relative">
       {/* Deep editorial band */}
-      <div className="bg-deep text-[#f2f2ef]">
-        <div className="container-editorial section-pad">
+      <div className="relative overflow-hidden bg-deep text-[#f2f2ef]">
+        {/* Blueprint grid + aurora atmosphere */}
+        <div
+          aria-hidden="true"
+          className="bg-blueprint-dark pointer-events-none absolute inset-0"
+          style={{
+            maskImage: "radial-gradient(ellipse 80% 70% at 50% 20%, black 20%, transparent 100%)",
+            WebkitMaskImage:
+              "radial-gradient(ellipse 80% 70% at 50% 20%, black 20%, transparent 100%)",
+          }}
+        />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -top-48 left-1/4 h-[460px] w-[620px] rounded-full bg-[radial-gradient(closest-side,rgb(152_109_78/0.16),transparent)] blur-3xl"
+        />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -bottom-40 right-0 h-[380px] w-[520px] rounded-full bg-[radial-gradient(closest-side,rgb(152_109_78/0.08),transparent)] blur-3xl"
+        />
+        <div
+          aria-hidden="true"
+          className="bg-noise pointer-events-none absolute inset-0 opacity-[0.05] mix-blend-overlay"
+        />
+
+        <div className="container-editorial section-pad relative">
           <Reveal>
             <div className="mb-12 flex items-center gap-4" aria-hidden="true">
               <span className="font-mono text-xs tracking-[0.22em] text-accent">06</span>
@@ -23,7 +46,14 @@ export function Approach() {
 
           <ul className="grid gap-px overflow-hidden rounded-2xl border border-[#303330] bg-[#303330] sm:grid-cols-2">
             {philosophy.principles.map((p, i) => (
-              <li key={p.index} className="group bg-deep p-8 transition-colors duration-300 hover:bg-deep-2 md:p-10">
+              <li
+                key={p.index}
+                className="group relative overflow-hidden bg-deep p-8 transition-colors duration-300 hover:bg-deep-2 md:p-10"
+              >
+                <span
+                  aria-hidden="true"
+                  className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-accent/60 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                />
                 <Reveal delay={(i % 2) * 0.07} y={14}>
                   <div className="flex h-full flex-col">
                     <div className="flex items-baseline justify-between">

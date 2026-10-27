@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
-import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
+import { AnimatePresence, motion, useReducedMotion, useScroll } from "framer-motion";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 import { navLinks, personal } from "@/data/personal";
 
@@ -12,6 +12,7 @@ export function Navbar() {
   const toggleRef = useRef<HTMLButtonElement>(null);
   const firstLinkRef = useRef<HTMLAnchorElement>(null);
   const reduced = useReducedMotion();
+  const { scrollYProgress } = useScroll();
 
   /* Scroll state → header treatment */
   useEffect(() => {
@@ -70,6 +71,13 @@ export function Navbar() {
           : "border-b border-transparent bg-transparent"
       }`}
     >
+      {/* Scroll progress — thin accent gradient bar */}
+      <motion.div
+        aria-hidden="true"
+        style={{ scaleX: scrollYProgress }}
+        className="absolute inset-x-0 top-0 h-[2px] origin-left bg-gradient-to-r from-accent-strong via-accent to-[#d9b08c]"
+      />
+
       <div className="container-editorial">
         <nav
           aria-label="Primary"

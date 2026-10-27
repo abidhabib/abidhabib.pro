@@ -25,3 +25,25 @@ Stage Summary:
 - All content traceable to supplied profile; no fabricated metrics/links/testimonials
 - README.md added (explicitly required by master prompt): install/build/deploy instructions
 - Stack: Next.js 16 (sandbox requirement), React 19, TS, Tailwind 4, framer-motion, lucide-react
+
+---
+Task ID: 2
+Agent: main agent (Z.ai)
+Task: Visual upgrade — add developer-grade graphics layer to the portfolio ("more graphics, dev-type, professional but eye-catchy")
+
+Work Log:
+- globals.css: added dev-graphics layer — marquee/float-y/caret-blink keyframes, animate-marquee/animate-float/caret-blink utilities, mask-fade-x, text-gradient-accent, bg-noise (SVG grain), hover-pause rule for marquee, reduced-motion guards
+- New CodeTerminal component (src/components/ui-custom/CodeTerminal.tsx): dark macOS-style console that types a looping session (whoami / stack --core / stack --infra / cat status.txt) char-by-char with blinking block caret; reduced-motion renders static; content restates profile facts only
+- New TechMarquee component (src/components/ui-custom/TechMarquee.tsx): seamless infinite ticker of 13 core technologies with Lucide icons, edge fade mask, pause on hover, sr-only summary
+- Hero: aurora copper glows + grain texture; glowing portrait halo; floating tech chips (React/Node.js/Docker/MySQL, staggered float); pulsing emerald dot in Open-to-work badge; gradient text on final heading line; terminal card overlapping portrait; "always building" mono tag
+- Navbar: 2px accent-gradient scroll progress bar (useScroll + scaleX)
+- Expertise cards: code watermarks (</>, { }, SQL, $_, =>, 0/1), gradient top edge on hover, accent icon tile with ring glow, lift + shadow on hover
+- Projects: radial copper glow behind featured mockups on hover + diagonal shine sweep; archive cards get same hover treatment
+- Experience: gradient timeline spine, year pills (current role in accent-soft), pulsing node on current role
+- Approach: blueprint-dark grid (radially masked), two aurora glows, grain overlay, hover top-edge on principle cells; fixed 328px mobile overflow via overflow-hidden on band
+- Contact: oversized "</>" watermark, corner glow, gradient top edge on CTA card, glowing gradient hover on CTA circle
+- Verification: agent-browser at 1440 and 390 viewports — hero, marquee, expertise, projects, experience, approach, contact all screenshot-checked; mobile horizontal overflow = 0 (after Approach fix); "OPEN TO WORK" chip nowrap fix; terminal opacity raised to /95 for readability; console clean; bun run lint passes; server 200
+
+Stage Summary:
+- Deliverable: same single-page portfolio, now with a cohesive developer-graphics layer (terminal, ticker, glows, watermarks, progress bar) in copper/editorial palette
+- All animations honor prefers-reduced-motion; all decorative elements aria-hidden; no fabricated data

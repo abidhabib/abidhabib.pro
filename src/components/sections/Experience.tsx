@@ -21,10 +21,10 @@ export function Experience() {
         </Reveal>
 
         <div className="relative">
-          {/* Timeline spine — desktop */}
+          {/* Timeline spine — gradient, desktop */}
           <div
             aria-hidden="true"
-            className="absolute bottom-2 left-[calc(38%+1.5rem)] top-2 hidden w-px bg-line lg:block"
+            className="absolute bottom-2 left-[calc(38%+1.5rem)] top-2 hidden w-px bg-gradient-to-b from-accent/50 via-line to-transparent lg:block"
           />
 
           <ol className="space-y-16 lg:space-y-20">
@@ -33,15 +33,28 @@ export function Experience() {
                 <div className="grid gap-6 lg:grid-cols-[38%_3rem_1fr] lg:gap-0">
                   {/* Years */}
                   <Reveal delay={0.04}>
-                    <p className="font-mono text-sm tracking-[0.14em] text-ink-2 lg:pt-1 lg:text-right">
-                      {item.period}
+                    <p className="lg:pt-1 lg:text-right">
+                      <span
+                        className={`inline-flex items-center rounded-full border px-3.5 py-1.5 font-mono text-[0.7rem] tracking-[0.12em] ${
+                          i === 0
+                            ? "border-accent/40 bg-accent-soft text-accent-strong"
+                            : "border-line bg-surface text-ink-2"
+                        }`}
+                      >
+                        {item.period}
+                      </span>
                     </p>
                   </Reveal>
 
-                  {/* Marker */}
+                  {/* Marker — current role pulses */}
                   <div aria-hidden="true" className="relative hidden lg:block">
                     <Reveal delay={0.1} y={8}>
-                      <span className="absolute left-[1.4375rem] top-1.5 h-2.5 w-2.5 -translate-x-1/2 rounded-full border-2 border-accent bg-bg" />
+                      <span className="absolute left-[1.4375rem] top-1.5 flex h-2.5 w-2.5 -translate-x-1/2 items-center justify-center">
+                        {i === 0 && (
+                          <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-40" />
+                        )}
+                        <span className="relative h-2.5 w-2.5 rounded-full border-2 border-accent bg-bg" />
+                      </span>
                     </Reveal>
                   </div>
 

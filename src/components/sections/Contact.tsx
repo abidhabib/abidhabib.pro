@@ -6,8 +6,20 @@ import { Reveal } from "@/components/ui-custom/Reveal";
 
 export function Contact() {
   return (
-    <section id="contact" aria-label="Contact" className="section-pad relative">
-      <div className="container-editorial">
+    <section id="contact" aria-label="Contact" className="section-pad relative overflow-hidden">
+      {/* Oversized code watermark */}
+      <span
+        aria-hidden="true"
+        className="pointer-events-none absolute -right-8 top-8 hidden select-none font-mono text-[11rem] font-bold leading-none text-ink/[0.035] xl:block"
+      >
+        {"</>"}
+      </span>
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -left-40 bottom-0 h-[360px] w-[440px] rounded-full bg-[radial-gradient(closest-side,rgb(152_109_78/0.1),transparent)] blur-3xl"
+      />
+
+      <div className="container-editorial relative">
         <Reveal>
           <div className="mb-12 flex items-center gap-4" aria-hidden="true">
             <span className="font-mono text-xs tracking-[0.22em] text-accent">07</span>
@@ -29,7 +41,11 @@ export function Contact() {
 
         {/* Primary CTA — giant email */}
         <Reveal delay={0.16}>
-          <div className="mt-14 rounded-3xl border border-line bg-surface p-8 md:mt-16 md:p-14">
+          <div className="relative mt-14 overflow-hidden rounded-3xl border border-line bg-surface p-8 shadow-[0_30px_70px_-50px_rgb(152_109_78/0.5)] md:mt-16 md:p-14">
+            <span
+              aria-hidden="true"
+              className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-transparent via-accent/70 to-transparent"
+            />
             <p className="eyebrow text-ink-3">Start a Conversation</p>
             <a
               href={contactSection.ctaHref}
@@ -39,7 +55,7 @@ export function Contact() {
               <span className="font-display text-[clamp(1.4rem,4.6vw,3.6rem)] font-bold leading-[1.08] tracking-[-0.03em] text-ink transition-colors duration-300 group-hover:text-accent-strong">
                 {personal.email}
               </span>
-              <span className="inline-flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-ink text-bg transition-all duration-300 group-hover:bg-accent-strong md:h-16 md:w-16">
+              <span className="inline-flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-ink text-bg transition-all duration-300 group-hover:bg-gradient-to-br group-hover:from-accent group-hover:to-accent-strong group-hover:shadow-[0_0_0_6px_rgb(152_109_78/0.15)] md:h-16 md:w-16">
                 <ArrowUpRight
                   className="h-6 w-6 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
                   aria-hidden="true"

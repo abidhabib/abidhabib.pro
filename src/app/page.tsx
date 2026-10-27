@@ -1,5 +1,6 @@
 import { Navbar } from "@/components/navigation/Navbar";
 import { Hero } from "@/components/sections/Hero";
+import { TechMarquee } from "@/components/ui-custom/TechMarquee";
 import { About } from "@/components/sections/About";
 import { Expertise } from "@/components/sections/Expertise";
 import { Projects } from "@/components/sections/Projects";
@@ -15,6 +16,7 @@ export default function PortfolioPage() {
       <Navbar />
       <main className="flex-1">
         <Hero />
+        <TechMarquee />
         <About />
         <Expertise />
         <Projects />

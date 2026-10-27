@@ -24,10 +24,20 @@ export function FeaturedCard({ project, index, onOpen }: CardProps) {
         flip ? "lg:[&>*:first-child]:order-2" : ""
       }`}
     >
-      {/* Mockup */}
-      <div className="relative overflow-hidden rounded-2xl border border-line bg-line/30 transition-transform duration-500 group-hover:-translate-y-1">
-        <div className="aspect-[16/11]">
-          <ProjectMockup type={project.mockup} />
+      {/* Mockup — with hover glow + shine sweep */}
+      <div className="relative">
+        <div
+          aria-hidden="true"
+          className="absolute -inset-5 rounded-[2rem] bg-[radial-gradient(closest-side,rgb(152_109_78/0.2),transparent)] opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-100"
+        />
+        <div className="relative overflow-hidden rounded-2xl border border-line bg-line/30 transition-transform duration-500 group-hover:-translate-y-1">
+          <div className="aspect-[16/11]">
+            <ProjectMockup type={project.mockup} />
+          </div>
+          <span
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/25 to-transparent transition-transform duration-700 ease-out group-hover:translate-x-full"
+          />
         </div>
       </div>
 
@@ -77,7 +87,11 @@ export function ArchiveCard({
   onOpen: (project: Project) => void;
 }) {
   return (
-    <article className="group flex h-full flex-col rounded-2xl border border-line bg-surface p-6 transition-all duration-300 hover:-translate-y-0.5 hover:border-line-strong md:p-7">
+    <article className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-line bg-surface p-6 transition-all duration-300 hover:-translate-y-1 hover:border-line-strong hover:shadow-[0_20px_44px_-28px_rgb(152_109_78/0.4)] md:p-7">
+      <span
+        aria-hidden="true"
+        className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-accent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+      />
       <div className="flex items-center justify-between">
         <span className="font-mono text-[0.66rem] tracking-[0.2em] text-accent">
           {project.number}

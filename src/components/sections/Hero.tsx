@@ -2,8 +2,21 @@
 
 import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
-import { ArrowDown, ArrowRight, ArrowUpRight, Github, Linkedin, MapPin } from "lucide-react";
+import {
+  ArrowDown,
+  ArrowRight,
+  ArrowUpRight,
+  Atom,
+  Container,
+  Database,
+  Github,
+  Hexagon,
+  Linkedin,
+  MapPin,
+  Terminal,
+} from "lucide-react";
 import { personal } from "@/data/personal";
+import { CodeTerminal } from "@/components/ui-custom/CodeTerminal";
 
 const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
 
@@ -47,14 +60,36 @@ export function Hero() {
         }}
       />
 
+      {/* Aurora glows — warm copper atmosphere */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -top-40 left-1/2 h-[480px] w-[min(760px,100vw)] -translate-x-1/2 rounded-full bg-[radial-gradient(closest-side,rgb(152_109_78/0.17),transparent)] blur-3xl"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -right-48 top-44 hidden h-[440px] w-[440px] rounded-full bg-[radial-gradient(closest-side,rgb(152_109_78/0.12),transparent)] blur-3xl lg:block"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -left-48 bottom-0 hidden h-[400px] w-[400px] rounded-full bg-[radial-gradient(closest-side,rgb(32_35_35/0.09),transparent)] blur-3xl lg:block"
+      />
+      {/* Fine grain texture */}
+      <div aria-hidden="true" className="bg-noise pointer-events-none absolute inset-0 opacity-[0.04] mix-blend-multiply" />
+
       <div className="container-editorial relative pt-36 pb-20 md:pt-44 md:pb-28">
         <div className="grid items-center gap-14 lg:grid-cols-[1.75fr_1fr] lg:gap-16">
           {/* ------------------------------ Content ------------------------------ */}
           <div>
             <Fade delay={0.05}>
               <div className="flex flex-wrap items-center gap-4">
-                <span className="inline-flex items-center gap-3 rounded-full border border-line bg-surface/80 py-1.5 pl-2 pr-4">
-                  <span className="rounded-full bg-accent-soft px-2.5 py-1 font-mono text-[0.6rem] font-medium uppercase tracking-[0.18em] text-accent-strong">
+                <span className="inline-flex items-center gap-3 rounded-full border border-line bg-surface/80 py-1.5 pl-2 pr-4 shadow-[0_10px_30px_-18px_rgb(152_109_78/0.55)] backdrop-blur">
+                  <span className="flex items-center gap-2 whitespace-nowrap rounded-full bg-accent-soft px-2.5 py-1 font-mono text-[0.6rem] font-medium uppercase tracking-[0.18em] text-accent-strong">
+                    <span className="relative flex h-1.5 w-1.5" aria-hidden="true">
+                      {!reduced && (
+                        <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-500 opacity-60" />
+                      )}
+                      <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald-500" />
+                    </span>
                     Open to work
                   </span>
                   <span className="font-mono text-[0.62rem] uppercase tracking-[0.18em] text-ink-2">
@@ -71,7 +106,9 @@ export function Hero() {
                     <span className="block">{line}</span>
                   ) : (
                     <motion.span
-                      className="block"
+                      className={`block ${
+                        i === personal.hero.heading.length - 1 ? "text-gradient-accent" : ""
+                      }`}
                       initial={{ y: "110%" }}
                       animate={{ y: 0 }}
                       transition={{ duration: 0.85, ease: EASE, delay: 0.12 + i * 0.1 }}
@@ -154,12 +191,18 @@ export function Hero() {
           {/* ------------------------------ Portrait ----------------------------- */}
           <Fade delay={0.4} className="relative mx-auto w-full max-w-md lg:max-w-none">
             <div className="relative">
+              {/* Soft glow behind the portrait */}
+              <div
+                aria-hidden="true"
+                className="absolute -inset-8 rounded-[2.5rem] bg-[radial-gradient(closest-side,rgb(152_109_78/0.16),transparent)] blur-2xl"
+              />
+
               {/* Offset architectural frame */}
               <div
                 aria-hidden="true"
                 className="absolute -right-4 -top-4 hidden h-full w-full rounded-3xl border border-accent/35 sm:block lg:-right-6 lg:-top-6"
               />
-              <div className="relative overflow-hidden rounded-3xl border border-line bg-surface">
+              <div className="relative overflow-hidden rounded-3xl border border-line bg-surface shadow-[0_30px_80px_-40px_rgb(24_24_24/0.4)]">
                 <div
                   aria-hidden="true"
                   className="bg-blueprint absolute inset-0"
@@ -185,6 +228,50 @@ export function Hero() {
                   </span>
                 </div>
               </div>
+
+              {/* Floating tech chips */}
+              <div
+                aria-hidden="true"
+                className="animate-float absolute -right-3 -top-6 hidden items-center gap-2 rounded-xl border border-line bg-surface/90 px-3.5 py-2 shadow-[0_14px_36px_-16px_rgb(24_24_24/0.35)] backdrop-blur sm:flex lg:-right-10"
+                style={{ animationDuration: "7s" }}
+              >
+                <Atom className="h-4 w-4 text-accent" strokeWidth={1.75} />
+                <span className="font-mono text-[0.66rem] font-medium tracking-[0.06em] text-ink">React</span>
+              </div>
+              <div
+                aria-hidden="true"
+                className="animate-float absolute -left-4 top-20 hidden items-center gap-2 rounded-xl border border-line bg-surface/90 px-3.5 py-2 shadow-[0_14px_36px_-16px_rgb(24_24_24/0.35)] backdrop-blur sm:flex lg:-left-12"
+                style={{ animationDuration: "5.6s", animationDelay: "0.8s" }}
+              >
+                <Hexagon className="h-4 w-4 text-accent" strokeWidth={1.75} />
+                <span className="font-mono text-[0.66rem] font-medium tracking-[0.06em] text-ink">Node.js</span>
+              </div>
+              <div
+                aria-hidden="true"
+                className="animate-float absolute -right-5 top-1/2 hidden items-center gap-2 rounded-xl border border-line bg-surface/90 px-3.5 py-2 shadow-[0_14px_36px_-16px_rgb(24_24_24/0.35)] backdrop-blur sm:flex lg:-right-14"
+                style={{ animationDuration: "6.4s", animationDelay: "1.6s" }}
+              >
+                <Container className="h-4 w-4 text-accent" strokeWidth={1.75} />
+                <span className="font-mono text-[0.66rem] font-medium tracking-[0.06em] text-ink">Docker</span>
+              </div>
+              <div
+                aria-hidden="true"
+                className="animate-float absolute -right-4 bottom-10 hidden items-center gap-2 rounded-xl border border-line bg-surface/90 px-3.5 py-2 shadow-[0_14px_36px_-16px_rgb(24_24_24/0.35)] backdrop-blur sm:flex lg:-right-12"
+                style={{ animationDuration: "6s", animationDelay: "2.4s" }}
+              >
+                <Database className="h-4 w-4 text-accent" strokeWidth={1.75} />
+                <span className="font-mono text-[0.66rem] font-medium tracking-[0.06em] text-ink">MySQL</span>
+              </div>
+
+              {/* Live terminal card */}
+              <CodeTerminal className="absolute -bottom-12 left-1/2 w-[268px] -translate-x-1/2 sm:-bottom-14 sm:left-2 sm:w-[300px] sm:translate-x-0 lg:-left-16" />
+              <span
+                aria-hidden="true"
+                className="absolute -bottom-16 right-6 hidden font-mono text-[0.6rem] uppercase tracking-[0.2em] text-ink-3 lg:block"
+              >
+                <Terminal className="mr-1.5 inline h-3 w-3 text-accent" />
+                always building
+              </span>
             </div>
           </Fade>
         </div>
