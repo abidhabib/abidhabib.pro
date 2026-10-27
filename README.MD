@@ -1,8 +1,8 @@
 <div align="center">
 
-# AH. — Developer Portfolio
+# AH. ABID HABIB
 
-**A premium, open-source developer portfolio with a live coding terminal, tech marquee, and editorial design system.**
+**A open-source developer portfolio with a live coding terminal, tech marquee, and editorial design system.**
 
 [![Live Site](https://img.shields.io/badge/live-abidhabib.pro-986D4E?style=flat-square&logo=vercel&logoColor=white)](https://abidhabib.pro)
 [![Next.js](https://img.shields.io/badge/Next.js_16-black?style=flat-square&logo=next.js)](https://nextjs.org)
