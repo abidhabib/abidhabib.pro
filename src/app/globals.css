@@ -1,0 +1,459 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ---------------------------------------------------------------------------
+   Design tokens — INK GRID / risograph monograph system
+   Strictly two inks: warm newsprint paper + print black.
+   Flat print rules: no bold serif, no rounded corners, no soft shadows.
+--------------------------------------------------------------------------- */
+@theme inline {
+  /* Paper + ink palette */
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-ink-3: var(--ink-3);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-deep: var(--deep);
+  --color-deep-2: var(--deep-2);
+  --color-deep-line: var(--deep-line);
+  --color-accent: var(--accent);
+  --color-accent-strong: var(--accent-strong);
+  --color-accent-soft: var(--accent-soft);
+
+  /* Typography — serif display / grotesk body / mono tags */
+  --font-display: var(--ff-display);
+  --font-body: var(--ff-body);
+  --font-mono: var(--ff-mono);
+
+  /* Minimal shadcn compatibility layer */
+  --color-background: var(--bg);
+  --color-foreground: var(--ink);
+  --color-primary: var(--ink);
+  --color-primary-foreground: var(--bg);
+  --color-border: var(--line);
+  --color-ring: var(--ink);
+}
+
+:root {
+  /* Paper */
+  --bg: #f0ebde;
+  --surface: #f0ebde;
+  --surface-2: #e6e0ce;
+
+  /* Ink — print black (warm, riso-soft) */
+  --ink: #171512;
+  --ink-2: #3d3a34;
+  --ink-3: #8b8478;
+
+  /* Rules — ink at drafting intensities */
+  --line: rgb(23 21 18 / 0.18);
+  --line-strong: rgb(23 21 18 / 0.45);
+
+  /* Typography — serif display / grotesk body / mono tags
+     (runtime vars; @theme inline maps utilities onto these) */
+  --ff-display: var(--font-newsreader), "Newsreader", Georgia, "Times New Roman", serif;
+  --ff-body: var(--font-hanken), "Hanken Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --ff-mono: var(--font-dm-mono), "DM Mono", ui-monospace, "SFMono-Regular", monospace;
+
+  /* Ink block (solid black regions) */
+  --deep: #171512;
+  --deep-2: #050505;
+  --deep-line: rgb(240 235 222 / 0.28);
+
+  /* Accent maps onto the single ink */
+  --accent: #171512;
+  --accent-strong: #050505;
+  --accent-soft: rgb(23 21 18 / 0.06);
+
+  --radius: 0rem;
+}
+
+/* ---------------------------------------------------------------------------
+   Base
+--------------------------------------------------------------------------- */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5.5rem;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  body {
+    background-color: var(--bg);
+    color: var(--ink-2);
+    font-family: var(--ff-body);
+    font-size: 1rem;
+    line-height: 1.7;
+    text-rendering: optimizeLegibility;
+    overflow-x: clip;
+  }
+
+  /* Permanent graph-paper drafting tone — the canvas behind every frame */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background-image:
+      linear-gradient(to right, rgb(23 21 18 / 0.03) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(23 21 18 / 0.03) 1px, transparent 1px),
+      linear-gradient(to right, rgb(23 21 18 / 0.055) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(23 21 18 / 0.055) 1px, transparent 1px);
+    background-size:
+      24px 24px,
+      24px 24px,
+      120px 120px,
+      120px 120px;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--ff-display);
+    font-weight: 400;
+    color: var(--ink);
+    letter-spacing: -0.008em;
+    text-wrap: balance;
+  }
+
+  ::selection {
+    background: var(--ink);
+    color: var(--bg);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--ink);
+    outline-offset: 3px;
+    border-radius: 0;
+  }
+
+  img {
+    user-select: none;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Layout rhythm + editorial type utilities
+--------------------------------------------------------------------------- */
+@utility container-editorial {
+  width: 100%;
+  max-width: 1320px;
+  margin-inline: auto;
+  padding-inline: clamp(1.25rem, 4.5vw, 4rem);
+}
+
+@utility section-pad {
+  padding-block: clamp(4.5rem, 9vw, 9.5rem);
+}
+
+/* Micro label — Hanken 600, uppercase, wide tracking */
+@utility eyebrow {
+  font-family: var(--ff-body);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+/* Mono tag — DM Mono 400, mild tracking */
+@utility mono-tag {
+  font-family: var(--ff-mono);
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+}
+
+/* Serif display — hierarchy through size, never weight */
+@utility display-hero {
+  font-family: var(--ff-display);
+  font-size: clamp(3.1rem, 7.4vw, 7rem);
+  line-height: 0.98;
+  letter-spacing: -0.008em;
+  font-weight: 400;
+}
+
+@utility display-section {
+  font-family: var(--ff-display);
+  font-size: clamp(2.15rem, 4.6vw, 4rem);
+  line-height: 1.04;
+  letter-spacing: -0.008em;
+  font-weight: 400;
+}
+
+@utility big-numeral {
+  font-family: var(--ff-display);
+  font-size: clamp(5rem, 10vw, 9rem);
+  line-height: 0.9;
+  letter-spacing: -0.015em;
+  font-weight: 400;
+}
+
+/* Outline numeral — stroke only, no fill */
+@utility text-stroke {
+  -webkit-text-stroke: 1.5px var(--ink);
+  color: transparent;
+}
+
+/* ---------------------------------------------------------------------------
+   Print rules — hairline frames, hard offsets, flat surfaces
+--------------------------------------------------------------------------- */
+@utility rule-t {
+  border-top: 1.5px solid var(--ink);
+}
+
+@utility rule-b {
+  border-bottom: 1.5px solid var(--ink);
+}
+
+@utility rule-t-soft {
+  border-top: 1px solid var(--line);
+}
+
+@utility rule-b-soft {
+  border-bottom: 1px solid var(--line);
+}
+
+/* Hard offset shadow — misregistered second pass of ink, never a blur */
+@utility shadow-hard {
+  box-shadow: 5px 5px 0 0 var(--ink);
+}
+
+@utility shadow-hard-sm {
+  box-shadow: 3px 3px 0 0 var(--ink);
+}
+
+@utility shadow-hard-paper {
+  box-shadow: 5px 5px 0 0 rgb(240 235 222 / 0.9);
+}
+
+/* Vertical text — spine labels */
+@utility v-text {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
+
+/* Pixel scanline fills */
+@utility bg-scan-v {
+  background-image: repeating-linear-gradient(
+    to right,
+    var(--ink) 0 2px,
+    transparent 2px 9px
+  );
+}
+
+@utility bg-scan-h {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    var(--ink) 0 2px,
+    transparent 2px 9px
+  );
+}
+
+/* Graph paper on the ink block — paper lines on black */
+@utility bg-graph-ink {
+  background-image:
+    linear-gradient(to right, rgb(240 235 222 / 0.07) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(240 235 222 / 0.07) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
+
+@utility bg-blueprint-dark {
+  background-image: linear-gradient(to right, rgb(240 235 222 / 0.07) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(240 235 222 / 0.07) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
+
+@utility bg-blueprint {
+  background-image: linear-gradient(to right, rgb(23 21 18 / 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(23 21 18 / 0.06) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
+
+@utility scrollbar-fine {
+  scrollbar-width: thin;
+  scrollbar-color: var(--line-strong) transparent;
+}
+
+/* Riso print grain */
+@utility bg-noise {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+@utility mask-fade-x {
+  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+}
+
+@utility mask-fade-y {
+  mask-image: linear-gradient(to bottom, transparent, black 12%, black 88%, transparent);
+}
+
+/* ---------------------------------------------------------------------------
+   Motion — marquee, caret, glitch pass, soft float
+--------------------------------------------------------------------------- */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes caret-blink {
+  0%,
+  45% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes square-blink {
+  0%,
+  60% {
+    opacity: 1;
+  }
+  61%,
+  100% {
+    opacity: 0.25;
+  }
+}
+
+@keyframes float-y {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* Glitch — brief misregistration passes on the display name */
+@keyframes glitch-a {
+  0%,
+  91%,
+  100% {
+    opacity: 0;
+    transform: none;
+    clip-path: inset(0 0 0 0);
+  }
+  92% {
+    opacity: 0.85;
+    transform: translate(-7px, 2px);
+    clip-path: inset(8% 0 62% 0);
+  }
+  94.5% {
+    opacity: 0.85;
+    transform: translate(6px, -2px);
+    clip-path: inset(58% 0 12% 0);
+  }
+  97% {
+    opacity: 0;
+  }
+}
+
+@keyframes glitch-b {
+  0%,
+  93%,
+  100% {
+    opacity: 0;
+    transform: none;
+    clip-path: inset(0 0 0 0);
+  }
+  94% {
+    opacity: 0.7;
+    transform: translate(5px, 1px);
+    clip-path: inset(38% 0 34% 0);
+  }
+  96.5% {
+    opacity: 0.7;
+    transform: translate(-5px, -1px);
+    clip-path: inset(74% 0 4% 0);
+  }
+  98.5% {
+    opacity: 0;
+  }
+}
+
+@utility animate-marquee {
+  animation: marquee 38s linear infinite;
+}
+
+@utility caret-blink {
+  animation: caret-blink 1.1s steps(1, end) infinite;
+}
+
+@utility square-blink {
+  animation: square-blink 1.4s steps(1, end) infinite;
+}
+
+@utility animate-float {
+  animation: float-y 7s ease-in-out infinite;
+}
+
+/* Glitch layers — two extra ink passes over [data-text] */
+.glitch {
+  position: relative;
+  display: inline-block;
+}
+
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.glitch::before {
+  color: var(--ink-2);
+  animation: glitch-a 4.2s steps(1, end) infinite;
+}
+
+.glitch::after {
+  color: var(--ink-3);
+  animation: glitch-b 3.4s steps(1, end) infinite;
+}
+
+/* Pause the ticker while the reader inspects it */
+.marquee-wrap:hover .animate-marquee {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee,
+  .caret-blink,
+  .square-blink,
+  .animate-float,
+  .glitch::before,
+  .glitch::after {
+    animation: none;
+  }
+
+  .glitch::before,
+  .glitch::after {
+    opacity: 0;
+  }
+}
