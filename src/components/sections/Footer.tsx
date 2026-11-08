@@ -69,15 +69,6 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Colophon — the print's production note */}
-          <div className="border-b border-[rgb(240_235_222/0.15)] py-6">
-            <p className="mono-tag text-[0.66rem] leading-relaxed text-[#f0ebde]/55">
-              COLOPHON — Set in Newsreader · Hanken Grotesk · DM Mono. Two inks only:
-              ink #171512 on paper #F0EBDE. Graph-paper tone behind every frame.
-              No gradients were harmed.
-            </p>
-          </div>
-
           {/* Lower */}
           <div className="flex flex-col items-start gap-6 py-7 sm:flex-row sm:items-center sm:justify-between">
             <p className="mono-tag text-[0.68rem] text-[#f0ebde]/55">

@@ -205,7 +205,7 @@ export function Hero() {
             <div className="relative">
               {/* Spine label down the right margin */}
               <SpineLabel className="absolute -right-9 top-2 hidden lg:block">
-                Two-Color System — Ink on Paper — Catalogue
+                Full-Stack Engineer — React · Node.js · Linux Infrastructure
               </SpineLabel>
 
               {/* Pixel glitch column — stair-stepped scanlines */}

@@ -143,7 +143,7 @@ export function Contact() {
             <div className="hidden shrink-0 flex-col items-start gap-2.5 lg:flex">
               <QRBlock seed="abid-contact-mosaic" cell={8} gap={2} />
               <span className="mono-tag text-[0.56rem] uppercase tracking-[0.14em] text-ink-3">
-                Mosaic — 08 · Print mark, not a code
+                Mosaic — 08
               </span>
             </div>
           </div>

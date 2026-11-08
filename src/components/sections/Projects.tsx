@@ -51,7 +51,7 @@ export function Projects() {
             className="group flex w-full flex-wrap items-center justify-between gap-5 text-left"
           >
             <div>
-              <p className="mono-tag uppercase text-ink-3">Appendix — Full Catalogue</p>
+              <p className="mono-tag uppercase text-ink-3">More Projects</p>
               <h3 className="mt-2 font-display text-2xl text-ink md:text-3xl">
                 {projectSection.archiveHeading}
               </h3>
