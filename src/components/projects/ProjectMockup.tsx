@@ -419,6 +419,121 @@ function LocalAI() {
   );
 }
 
+/* Market terminal — flat candlesticks + volume strip + depth rail.
+   Values are fixed (decorative, aria-hidden), never random: stable SSR. */
+const CANDLES: { body: number; wick: number; up: boolean }[] = [
+  { body: 16, wick: 34, up: true },
+  { body: 22, wick: 40, up: true },
+  { body: 12, wick: 30, up: false },
+  { body: 18, wick: 36, up: true },
+  { body: 10, wick: 26, up: false },
+  { body: 20, wick: 42, up: true },
+  { body: 24, wick: 46, up: true },
+  { body: 14, wick: 32, up: false },
+  { body: 8, wick: 22, up: false },
+  { body: 17, wick: 38, up: true },
+  { body: 23, wick: 44, up: true },
+  { body: 11, wick: 28, up: false },
+  { body: 19, wick: 40, up: true },
+  { body: 26, wick: 50, up: true },
+  { body: 13, wick: 30, up: false },
+  { body: 21, wick: 42, up: true },
+];
+
+const VOLUMES = [30, 55, 40, 70, 25, 60, 45, 80, 35, 50, 65, 30, 58, 75, 42, 68];
+
+const DEPTH: { w: string; tone: "base" | "soft" | "strong" }[] = [
+  { w: "85%", tone: "base" },
+  { w: "62%", tone: "soft" },
+  { w: "74%", tone: "base" },
+  { w: "48%", tone: "soft" },
+  { w: "90%", tone: "strong" },
+  { w: "58%", tone: "soft" },
+];
+
+function Market() {
+  return (
+    <div className="flex h-full flex-col bg-bg">
+      <Chrome title="market terminal · btc/usdt" />
+      {/* Ticker row */}
+      <div className="flex items-center gap-3 border-b border-ink/20 px-4 py-2">
+        <span className="border border-ink bg-ink px-2 py-0.5 font-mono text-[0.58rem] uppercase tracking-[0.14em] text-bg">
+          BTC / USDT
+        </span>
+        <span className="h-1.5 w-1.5 bg-ink" aria-hidden="true" />
+        <span className="font-mono text-[0.58rem] uppercase tracking-[0.18em] text-ink-3">
+          live · binance spot
+        </span>
+        <span className="ml-auto hidden gap-1 sm:flex" aria-hidden="true">
+          {["1m", "5m", "1h", "1d"].map((tf, i) => (
+            <span
+              key={tf}
+              className={`px-1.5 py-0.5 font-mono text-[0.52rem] ${
+                i === 0 ? "border border-ink text-ink" : "text-ink-3"
+              }`}
+            >
+              {tf}
+            </span>
+          ))}
+        </span>
+      </div>
+
+      <div className="flex min-h-0 flex-1">
+        {/* Chart field */}
+        <div className="flex min-w-0 flex-1 flex-col border-r border-ink/20">
+          <div className="flex min-h-0 flex-1 items-end gap-[3px] px-4 pt-4">
+            {CANDLES.map((c, i) => (
+              <div key={i} className="relative flex h-full flex-1 flex-col justify-end">
+                <span
+                  className="mx-auto w-px bg-ink/40"
+                  style={{ height: `${c.wick}%` }}
+                  aria-hidden="true"
+                />
+                <span
+                  className={`mx-auto w-[62%] ${
+                    c.up ? "bg-ink" : "border border-ink/60 bg-bg"
+                  }`}
+                  style={{ height: `${c.body}%` }}
+                  aria-hidden="true"
+                />
+              </div>
+            ))}
+          </div>
+          {/* Volume strip */}
+          <div className="flex h-10 items-end gap-[3px] border-t border-ink/15 px-4 py-1.5">
+            {VOLUMES.map((v, i) => (
+              <span key={i} className="flex-1 bg-ink/25" style={{ height: `${v}%` }} />
+            ))}
+          </div>
+        </div>
+
+        {/* Depth rail */}
+        <div className="hidden w-24 shrink-0 flex-col gap-2.5 p-3 sm:flex" aria-hidden="true">
+          <span className="font-mono text-[0.52rem] uppercase tracking-[0.16em] text-ink-3">
+            order book
+          </span>
+          {DEPTH.map((d, i) => (
+            <div key={i} className="flex items-center gap-1.5">
+              <Dot tone={i === 4 ? "accent" : "line"} />
+              <Line w={d.w} tone={d.tone} />
+            </div>
+          ))}
+          <span className="mt-2 h-px w-full bg-ink/15" />
+          <span className="font-mono text-[0.52rem] uppercase tracking-[0.16em] text-ink-3">
+            trades
+          </span>
+          {DEPTH.slice(0, 3).map((d, i) => (
+            <div key={i} className="flex items-center gap-1.5">
+              <Dot tone={i % 2 === 0 ? "accent" : "line"} />
+              <Line w={d.w} tone="soft" />
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 const variants = {
   dashboard: Dashboard,
   ledger: Ledger,
@@ -430,6 +545,7 @@ const variants = {
   catalog: Catalog,
   terminal: Terminal,
   ai: LocalAI,
+  market: Market,
 } as const;
 
 export function ProjectMockup({ type }: { type: keyof typeof variants }) {

@@ -2,7 +2,8 @@
 
 import { useEffect, useRef } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
-import { X } from "lucide-react";
+import { ArrowUpRight, X } from "lucide-react";
+import Image from "next/image";
 import type { Project } from "@/data/projects";
 import { ProjectMockup } from "./ProjectMockup";
 
@@ -119,6 +120,47 @@ export function CaseStudyModal({ project, onClose }: ModalProps) {
                   <ProjectMockup type={project.mockup} />
                 </div>
               </div>
+
+              {/* Live link */}
+              {project.url && (
+                <div className="border-b border-ink/20 bg-bg px-6 py-4 md:px-8">
+                  <a
+                    href={project.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2.5 bg-ink px-5 py-2.5 font-mono text-[0.68rem] uppercase tracking-[0.14em] text-bg transition-all duration-200 hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-hard-sm"
+                  >
+                    Visit Live
+                    <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
+                  </a>
+                </div>
+              )}
+
+              {/* Live captures — real screenshots, tipped in as color plates */}
+              {project.shots && project.shots.length > 0 && (
+                <div className="space-y-5 px-6 pt-8 md:px-8">
+                  <Block title="Live Capture">
+                    {project.shots.map((shot, i) => (
+                      <figure key={i} className="border border-ink bg-bg">
+                        <Image
+                          src={shot.src}
+                          alt={shot.caption}
+                          width={1440}
+                          height={1080}
+                          sizes="(max-width: 768px) 100vw, 768px"
+                          className="h-auto w-full"
+                        />
+                        <figcaption className="flex items-center justify-between gap-3 border-t border-ink/20 px-4 py-2.5">
+                          <span className="mono-tag text-[0.62rem] uppercase tracking-[0.14em] text-ink">
+                            Fig. {String.fromCharCode(65 + i)} — {shot.caption}
+                          </span>
+                          <span className="mono-tag text-[0.6rem] text-ink-3">1440×1080</span>
+                        </figcaption>
+                      </figure>
+                    ))}
+                  </Block>
+                </div>
+              )}
 
               <div className="space-y-9 px-6 py-8 md:px-8 md:py-9">
                 <Block title="Overview">

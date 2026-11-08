@@ -66,18 +66,35 @@ export function FeaturedCard({ project, index, onOpen }: CardProps) {
           ))}
         </div>
 
-        <button
-          type="button"
-          onClick={() => onOpen(project)}
-          className="group/btn mt-8 inline-flex items-center gap-2.5 bg-ink px-6 py-3 font-mono text-[0.7rem] uppercase tracking-[0.14em] text-bg transition-all duration-200 hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-hard-sm"
-          aria-haspopup="dialog"
-        >
-          Open Case File
-          <ArrowUpRight
-            className="h-4 w-4 transition-transform duration-200 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5"
-            aria-hidden="true"
-          />
-        </button>
+        <div className="mt-8 flex flex-wrap gap-3">
+          <button
+            type="button"
+            onClick={() => onOpen(project)}
+            className="inline-flex items-center gap-2.5 bg-ink px-6 py-3 font-mono text-[0.7rem] uppercase tracking-[0.14em] text-bg transition-all duration-200 hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-hard-sm"
+            aria-haspopup="dialog"
+          >
+            Open Case File
+            <ArrowUpRight
+              className="h-4 w-4 transition-transform duration-200 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5"
+              aria-hidden="true"
+            />
+          </button>
+
+          {project.url && (
+            <a
+              href={project.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2.5 border border-ink px-6 py-3 font-mono text-[0.7rem] uppercase tracking-[0.14em] text-ink transition-all duration-200 hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-hard-sm"
+            >
+              Visit Live
+              <ArrowUpRight
+                className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                aria-hidden="true"
+              />
+            </a>
+          )}
+        </div>
       </div>
     </M>
   );

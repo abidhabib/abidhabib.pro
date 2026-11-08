@@ -6,7 +6,9 @@ export type Project = {
   tech: string[];
   description: string;
   features: string[];
-  mockup: "dashboard" | "ledger" | "payments" | "branches" | "infra" | "analytics" | "desktop" | "catalog" | "terminal" | "ai";
+  mockup: "dashboard" | "ledger" | "payments" | "branches" | "infra" | "analytics" | "desktop" | "catalog" | "terminal" | "ai" | "market";
+  url?: string;
+  shots?: { src: string; caption: string }[];
   caseStudy: {
     overview: string;
     problem: string;
@@ -290,6 +292,64 @@ export const featuredProjects: Project[] = [
       ],
     },
   },
+  {
+    id: "flowlens-terminal",
+    number: "11",
+    title: "FlowLens — Crypto Market Terminal",
+    category: "Real-Time Market Terminal",
+    tech: ["WebSockets", "Binance Spot API", "Real-Time Rendering", "Data Visualization"],
+    description:
+      "A live market terminal for BTC/USDT streaming Binance Spot data in real time — candlesticks with layered indicators, streaming order book and trade tape, plus alternative lenses on the same feed from crypto bubbles and heatmap to footprint and whale tracking.",
+    features: [
+      "Live candlestick chart",
+      "EMA20 / EMA50 / BB / VWAP overlays",
+      "RSI(14) and CVD panes",
+      "Streaming order book",
+      "Last-trades tape",
+      "Timeframes from 1m to 1w",
+      "Crypto bubbles view",
+      "Market heatmap",
+      "Footprint analysis",
+      "Whale watching",
+      "Volume profile",
+      "Futures and sentiment views",
+      "Signal and L3 event feeds",
+      "Pinnable horizontal levels",
+    ],
+    mockup: "market",
+    url: "https://crypto.abidhabib.pro",
+    shots: [
+      {
+        src: "/projects/flowlens-terminal.webp",
+        caption: "Live capture — chart view with EMA overlays, volume and RSI pane",
+      },
+    ],
+    caseStudy: {
+      overview:
+        "FlowLens is a browser-based market terminal for BTC/USDT streaming Binance Spot public data live: a candlestick chart with indicator overlays, a streaming order book and trade tape, and a rail of alternative analysis views — crypto bubbles, heatmap, footprint, whales, volume profile, futures, sentiment, signals — all reading from the same live feed. It runs as a public, always-on instrument at crypto.abidhabib.pro.",
+      problem:
+        "Traders scatter their attention across disconnected tools: one tab for candles, another for the order book, a third for sentiment. Switching between them loses context, and depth-of-market visibility is usually gated behind paywalls or buried in clutter.",
+      approach:
+        "The terminal is built as a single screen organized around one live stream. Every view is a different lens on the same market data, so switching views never means reconnecting. Indicators layer directly onto the chart, horizontal levels are pinned by clicking the chart itself, and connection state is always visible — the UI shows SYNC and LIVE states rather than silently displaying stale numbers.",
+      architecture: [
+        "Streams Binance Spot public market data over a live socket connection",
+        "Purpose-built chart renderer with layered indicator overlays (EMA, Bollinger Bands, VWAP, RSI, CVD)",
+        "Modular analysis views — bubbles, heatmap, footprint, whales, volume profile — computed over the shared feed",
+        "Deployed as a public terminal at crypto.abidhabib.pro over HTTPS",
+      ],
+      capabilities: [
+        "Live candlesticks with EMA20/EMA50, Bollinger Bands and VWAP overlays",
+        "RSI(14) and CVD panes beneath the main chart",
+        "Streaming order book and last-trades tape",
+        "Timeframes from 1m to 1w with pinnable horizontal price levels",
+      ],
+      considerations: [
+        "Rendering is budgeted for a 24/7 firehose of ticks — the chart stays responsive while the tape never stops",
+        "Every view reads the same stream, so no view can disagree with the candles it sits beside",
+        "Connection state (SYNC / LIVE) is shown honestly in the header instead of presenting stale data as current",
+      ],
+    },
+  },
 ];
 
 export const archiveProjects: Project[] = [
@@ -470,7 +530,7 @@ export const projectSection = {
   eyebrow: "03 / Selected Work",
   heading: "Systems built to solve real problems.",
   subheading:
-    "A selection of applications, systems, and technical infrastructure spanning frontend engineering, backend development, databases, and deployment.",
+    "A selection of applications, systems, and technical infrastructure spanning frontend engineering, backend development, databases, real-time interfaces, and deployment.",
   archiveHeading: "Further Infrastructure & Engineering Work",
   archiveNote:
     "Additional projects spanning infrastructure engineering, frontend systems, automation, and self-hosted AI tooling.",
